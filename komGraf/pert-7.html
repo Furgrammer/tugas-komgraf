@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Komputer Grafik</title>
+
+    <!-- My Style -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Feather Icons -->
+    <script src="https://unpkg.com/feather-icons"></script>
+</head>
+
+<body>
+
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo"><a href="index.html">Komputer<span>Grafik</span></a></div>
+                <div class="line"></div>
+                <button onclick="toggleSidebar()" class="toggle-button" id="toggle-button"><i
+                        data-feather="chevrons-right"></i></button>
+            </nav>
+        </div>
+    </header>
+
+    <aside class="sidebar" id="sidebar">
+        <ul class="sidebar-menu">
+            <!-- <button onclick=closeSidebar() id="close-btn"><i data-feather="x"></i></button> -->
+            <h3 class="logo"><a href="index.html">DAFTAR ISI</a></h1>
+
+                <li class="sidebar-item">
+                    <a href="pert-1.html">
+                        <i data-feather="book"></i>
+                        <span>Pertemuan 1</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="pert-2.html">
+                        <i data-feather="book"></i>
+                        <span>Pertemuan 2</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="pert-3.html">
+                        <i data-feather="book"></i>
+                        <span>Pertemuan 3</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="pert-4.html">
+                        <i data-feather="book"></i>
+                        <span>Pertemuan 4</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="pert-5.html">
+                        <i data-feather="book"></i>
+                        <span>Pertemuan 5</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="pert-6.html">
+                        <i data-feather="book"></i>
+                        <span>Pertemuan 6</span>
+                    </a>
+                </li>
+                <li class="sidebar-item active">
+                    <a href="pert-7.html">
+                        <i data-feather="book"></i>
+                        <span>Pertemuan 7</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="pert-8.html">
+                        <i data-feather="book"></i>
+                        <span>Pertemuan 8</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="pert-9.html">
+                        <i data-feather="book"></i>
+                        <span>Pertemuan 9</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="pert-10.html">
+                        <i data-feather="book"></i>
+                        <span>Pertemuan 10</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="pert-11.html">
+                        <i data-feather="book"></i>
+                        <span>Pertemuan 11</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="pert-12.html">
+                        <i data-feather="book"></i>
+                        <span>Pertemuan 12</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="pert-13.html">
+                        <i data-feather="book"></i>
+                        <span>Pertemuan 13</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="pert-14.html">
+                        <i data-feather="book"></i>
+                        <span>Pertemuan 14</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="tugas-dashboard.html">
+                        <i data-feather="book-open"></i>
+                        <span>Tugas Dashboard</span>
+                    </a>
+                </li>
+        </ul>
+    </aside>
+
+    <main>
+        <section id="pert-7" class="section">
+            <header>
+                <h1>Pertemuan 7 - Proyeksi Geometri Bidang</h1>
+            </header>
+
+            <div class="card">
+                <h2>Proyeksi Geometri Bidang</h2>
+                <p>Proyeksi adalah proses transformasi informasi titik dalam sistem koordinat berdimensi-n ke sistem
+                    koordinat
+                    dengan ukuran kurang dari n. Pada materi ini, kita akan mempelajari proyeksi 3D ke 2D.</p>
+
+                <div class="controls">
+                    <div class="control-group">
+                        <h3>Jenis Proyeksi</h3>
+                        <div class="input-group">
+                            <label for="projectionType">Tipe Proyeksi:</label>
+                            <select id="projectionType">
+                                <option value="orthographic">Orthographic (Depan)</option>
+                                <option value="top">Orthographic (Atas)</option>
+                                <option value="side">Orthographic (Samping)</option>
+                                <option value="isometric">Axonometric (Isometric)</option>
+                                <option value="cavalier">Oblique (Cavalier)</option>
+                                <option value="cabinet">Oblique (Cabinet)</option>
+                                <option value="perspective1">Perspektif (1 Titik Hilang)</option>
+                                <option value="perspective2">Perspektif (2 Titik Hilang)</option>
+                                <option value="perspective3">Perspektif (3 Titik Hilang)</option>
+                            </select>
+                        </div>
+                        <button id="drawBtn" class="btn">Gambar Proyeksi</button>
+                        <button id="resetBtn" class="btn btn-accent">Reset</button>
+                    </div>
+
+                    <div class="control-group">
+                        <h3>Parameter Proyeksi</h3>
+                        <div class="input-group">
+                            <label for="alpha">Sudut Alpha (derajat):</label>
+                            <input type="range" id="alpha" min="0" max="360" value="45">
+                            <span id="alphaValue">45°</span>
+                        </div>
+
+                        <div class="input-group">
+                            <label for="beta">Sudut Beta (derajat):</label>
+                            <input type="range" id="beta" min="0" max="90" value="45">
+                            <span id="betaValue">45°</span>
+                        </div>
+
+                        <div class="input-group">
+                            <label for="distance">Jarak Proyeksi:</label>
+                            <input type="range" id="distance" min="1" max="20" value="10">
+                            <span id="distanceValue">10</span>
+                        </div>
+                    </div>
+
+                    <div class="control-group">
+                        <h3>Rotasi Objek</h3>
+                        <div class="input-group">
+                            <label for="rotateX">Rotasi X (derajat):</label>
+                            <input type="range" id="rotateX" min="-180" max="180" value="0">
+                            <span id="rotateXValue">0°</span>
+                        </div>
+
+                        <div class="input-group">
+                            <label for="rotateY">Rotasi Y (derajat):</label>
+                            <input type="range" id="rotateY" min="-180" max="180" value="0">
+                            <span id="rotateYValue">0°</span>
+                        </div>
+
+                        <div class="input-group">
+                            <label for="rotateZ">Rotasi Z (derajat):</label>
+                            <input type="range" id="rotateZ" min="-180" max="180" value="0">
+                            <span id="rotateZValue">0°</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="visualization">
+                    <div class="canvas-container">
+                        <canvas id="projectionCanvas" width="600" height="400"></canvas>
+                    </div>
+
+                    <div class="legend">
+                        <div class="legend-item">
+                            <div class="legend-color legend-center"></div>
+                            <span>Titik Pusat</span>
+                        </div>
+                        <div class="legend-item">
+                            <div class="legend-color legend-cube"></div>
+                            <span>Kubus 3D</span>
+                        </div>
+                        <div class="legend-item">
+                            <div class="legend-color legend-projection"></div>
+                            <span>Bidang Proyeksi</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="explanation">
+                    <h3>Penjelasan Proyeksi</h3>
+                    <div id="projectionExplanation">
+                        <p>Proyeksi <strong>Orthographic</strong> diperoleh jika sinar proyeksi tegak lurus dengan
+                            bidang proyeksi.
+                            Proyeksi ini sering digunakan untuk memperoleh tampilan depan, atas, dan samping suatu
+                            objek.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2>Perbandingan Proyeksi Paralel vs Perspektif</h2>
+                <div class="comparison">
+                    <div class="comparison-item">
+                        <h3>Proyeksi Paralel</h3>
+                        <ul>
+                            <li>Baik untuk pengukuran yang membutuhkan ketelitian/presisi</li>
+                            <li>Garis paralel tetap sejajar</li>
+                            <li>Sudut tidak preserved</li>
+                            <li>Kurang realistik</li>
+                            <li>Titik pusat proyeksi di tak terhingga</li>
+                        </ul>
+                    </div>
+
+                    <div class="comparison-item">
+                        <h3>Proyeksi Perspektif</h3>
+                        <ul>
+                            <li>Ukuran berdasarkan jarak - lebih realistik</li>
+                            <li>Jarak dan sudut tidak selalu preserved</li>
+                            <li>Garis paralel tidak selalu sejajar</li>
+                            <li>Memberikan efek kedalaman</li>
+                            <li>Titik pusat proyeksi berhingga</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Jenis Proyeksi</th>
+                            <th>Karakteristik</th>
+                            <th>Penggunaan</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Orthographic</td>
+                            <td>Proyeksi tegak lurus, tidak ada distorsi</td>
+                            <td>Gambar teknik, arsitektur</td>
+                        </tr>
+                        <tr>
+                            <td>Axonometric</td>
+                            <td>Menampilkan >1 permukaan objek</td>
+                            <td>Desain produk, ilustrasi teknis</td>
+                        </tr>
+                        <tr>
+                            <td>Oblique</td>
+                            <td>Sinar proyeksi miring terhadap bidang</td>
+                            <td>Ilustrasi arsitektur, presentasi</td>
+                        </tr>
+                        <tr>
+                            <td>Perspektif</td>
+                            <td>Efek kedalaman, garis menuju titik hilang</td>
+                            <td>Seni digital, arsitektur, game</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+
+    <script>
+        feather.replace();
+
+        document.addEventListener('DOMContentLoaded', function () {
+            // Elemen canvas dan konteks
+            const canvas = document.getElementById('projectionCanvas');
+            const ctx = canvas.getContext('2d');
+
+            // State aplikasi
+            const state = {
+                projectionType: 'orthographic',
+                alpha: 45,
+                beta: 45,
+                distance: 10,
+                rotateX: 0,
+                rotateY: 0,
+                rotateZ: 0
+            };
+
+            // Dimensi canvas
+            const centerX = canvas.width / 2;
+            const centerY = canvas.height / 2;
+            const scale = 30;
+
+            // Definisi kubus 3D
+            const cube = {
+                vertices: [
+                    // Front face
+                    [-1, -1, 1], [1, -1, 1], [1, 1, 1], [-1, 1, 1],
+                    // Back face
+                    [-1, -1, -1], [1, -1, -1], [1, 1, -1], [-1, 1, -1]
+                ],
+                edges: [
+                    // Front face
+                    [0, 1], [1, 2], [2, 3], [3, 0],
+                    // Back face
+                    [4, 5], [5, 6], [6, 7], [7, 4],
+                    // Connections
+                    [0, 4], [1, 5], [2, 6], [3, 7]
+                ]
+            };
+
+            // Fungsi untuk menggambar kubus
+            function drawCube() {
+                // Bersihkan canvas
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+                // Gambar bidang proyeksi
+                drawProjectionPlane();
+
+                // Proyeksikan titik-titik kubus
+                const projectedPoints = projectCube();
+
+                // Gambar garis kubus
+                ctx.strokeStyle = '#2563eb';
+                ctx.lineWidth = 2;
+
+                for (const edge of cube.edges) {
+                    const p1 = projectedPoints[edge[0]];
+                    const p2 = projectedPoints[edge[1]];
+
+                    ctx.beginPath();
+                    ctx.moveTo(p1.x, p1.y);
+                    ctx.lineTo(p2.x, p2.y);
+                    ctx.stroke();
+                }
+
+                // Gambar titik kubus
+                ctx.fillStyle = '#2563eb';
+                for (const point of projectedPoints) {
+                    ctx.beginPath();
+                    ctx.arc(point.x, point.y, 4, 0, Math.PI * 2);
+                    ctx.fill();
+                }
+
+                // Gambar titik pusat
+                ctx.fillStyle = '#ec4899';
+                ctx.beginPath();
+                ctx.arc(centerX, centerY, 6, 0, Math.PI * 2);
+                ctx.fill();
+            }
+
+            // Fungsi untuk menggambar bidang proyeksi
+            function drawProjectionPlane() {
+                ctx.strokeStyle = '#10b981';
+                ctx.lineWidth = 1;
+                ctx.setLineDash([5, 5]);
+
+                ctx.beginPath();
+                ctx.rect(centerX - 150, centerY - 100, 300, 200);
+                ctx.stroke();
+
+                ctx.setLineDash([]);
+            }
+
+            // Fungsi untuk memproyeksikan kubus
+            function projectCube() {
+                const projectedPoints = [];
+                const rotationX = state.rotateX * Math.PI / 180;
+                const rotationY = state.rotateY * Math.PI / 180;
+                const rotationZ = state.rotateZ * Math.PI / 180;
+
+                for (const vertex of cube.vertices) {
+                    let [x, y, z] = vertex;
+
+                    // Rotasi objek
+                    if (rotationX !== 0) {
+                        const tempY = y;
+                        y = y * Math.cos(rotationX) - z * Math.sin(rotationX);
+                        z = tempY * Math.sin(rotationX) + z * Math.cos(rotationX);
+                    }
+
+                    if (rotationY !== 0) {
+                        const tempX = x;
+                        x = x * Math.cos(rotationY) + z * Math.sin(rotationY);
+                        z = -tempX * Math.sin(rotationY) + z * Math.cos(rotationY);
+                    }
+
+                    if (rotationZ !== 0) {
+                        const tempX = x;
+                        x = x * Math.cos(rotationZ) - y * Math.sin(rotationZ);
+                        y = tempX * Math.sin(rotationZ) + y * Math.cos(rotationZ);
+                    }
+
+                    // Proyeksi berdasarkan jenis
+                    let px, py;
+
+                    switch (state.projectionType) {
+                        case 'orthographic':
+                            // Proyeksi orthographic depan
+                            px = x;
+                            py = y;
+                            break;
+
+                        case 'top':
+                            // Proyeksi orthographic atas
+                            px = x;
+                            py = -z;
+                            break;
+
+                        case 'side':
+                            // Proyeksi orthographic samping
+                            px = z;
+                            py = y;
+                            break;
+
+                        case 'isometric':
+                            // Proyeksi isometric
+                            px = (x - z) * Math.cos(30 * Math.PI / 180);
+                            py = y + (x + z) * Math.sin(30 * Math.PI / 180);
+                            break;
+
+                        case 'cavalier':
+                            // Proyeksi oblique cavalier
+                            const alpha = state.alpha * Math.PI / 180;
+                            px = x + z * Math.cos(alpha);
+                            py = y + z * Math.sin(alpha);
+                            break;
+
+                        case 'cabinet':
+                            // Proyeksi oblique cabinet
+                            const beta = state.beta * Math.PI / 180;
+                            px = x + 0.5 * z * Math.cos(beta);
+                            py = y + 0.5 * z * Math.sin(beta);
+                            break;
+
+                        case 'perspective1':
+                            // Proyeksi perspektif 1 titik hilang
+                            const d1 = state.distance;
+                            px = (x * d1) / (d1 + z);
+                            py = (y * d1) / (d1 + z);
+                            break;
+
+                        case 'perspective2':
+                            // Proyeksi perspektif 2 titik hilang
+                            const d2 = state.distance;
+                            px = (x * d2) / (d2 + z);
+                            py = (y * d2) / (d2 + z);
+                            break;
+
+                        case 'perspective3':
+                            // Proyeksi perspektif 3 titik hilang
+                            const d3 = state.distance;
+                            px = (x * d3) / (d3 + z);
+                            py = (y * d3) / (d3 + z);
+                            break;
+
+                        default:
+                            px = x;
+                            py = y;
+                    }
+
+                    projectedPoints.push({
+                        x: centerX + px * scale,
+                        y: centerY - py * scale
+                    });
+                }
+
+                return projectedPoints;
+            }
+
+            // Fungsi untuk memperbarui penjelasan proyeksi
+            function updateExplanation() {
+                const explanationDiv = document.getElementById('projectionExplanation');
+                let explanation = '';
+
+                switch (state.projectionType) {
+                    case 'orthographic':
+                        explanation = `
+                            <p>Proyeksi <strong>Orthographic</strong> diperoleh jika sinar proyeksi tegak lurus dengan bidang proyeksi.</p>
+                            <p>Proyeksi ini sering digunakan untuk memperoleh tampilan depan, atas, dan samping suatu objek.</p>
+                            <p>Keunggulan: Ukuran objek tetap akurat, garis paralel tetap sejajar.</p>
+                            <p>Kekurangan: Tidak menampilkan kedalaman, kurang realistis.</p>
+                        `;
+                        break;
+
+                    case 'top':
+                        explanation = `
+                            <p>Proyeksi <strong>Orthographic - Atas</strong> menampilkan objek dari sudut pandang atas.</p>
+                            <p>Proyeksi ini berguna untuk menampilkan denah atau layout suatu objek.</p>
+                            <p>Dalam proyeksi ini, sumbu Z diabaikan dan hanya sumbu X dan Y yang ditampilkan.</p>
+                        `;
+                        break;
+
+                    case 'side':
+                        explanation = `
+                            <p>Proyeksi <strong>Orthographic - Samping</strong> menampilkan objek dari sudut pandang samping.</p>
+                            <p>Proyeksi ini berguna untuk menampilkan elevasi atau ketinggian suatu objek.</p>
+                            <p>Dalam proyeksi ini, sumbu X diabaikan dan hanya sumbu Y dan Z yang ditampilkan.</p>
+                        `;
+                        break;
+
+                    case 'isometric':
+                        explanation = `
+                            <p>Proyeksi <strong>Axonometric (Isometric)</strong> menampilkan lebih dari satu permukaan suatu objek.</p>
+                            <p>Proyeksi isometric dilakukan dengan memposisikan bidang proyeksi sehingga memotong ketiga sumbu koordinat pada sudut yang sama.</p>
+                            <p>Keunggulan: Menampilkan 3 sisi objek sekaligus dengan distorsi minimal.</p>
+                            <p>Sering digunakan dalam desain teknis dan game.</p>
+                        `;
+                        break;
+
+                    case 'cavalier':
+                        explanation = `
+                            <p>Proyeksi <strong>Oblique (Cavalier)</strong> dicapai karena sinar proyeksi tidak tegak lurus dengan bidang proyeksi.</p>
+                            <p>Dalam proyeksi cavalier, panjang proyeksi pada sumbu Z sama dengan panjang aktual (L = 1).</p>
+                            <p>Sudut alpha (α) menentukan arah proyeksi.</p>
+                            <p>Proyeksi ini sering digunakan untuk ilustrasi arsitektur.</p>
+                        `;
+                        break;
+
+                    case 'cabinet':
+                        explanation = `
+                            <p>Proyeksi <strong>Oblique (Cabinet)</strong> adalah variasi dari proyeksi cavalier.</p>
+                            <p>Dalam proyeksi cabinet, panjang proyeksi pada sumbu Z dikurangi setengahnya (L = 0.5) untuk memberikan tampilan yang lebih realistis.</p>
+                            <p>Sudut alpha (α) menentukan arah proyeksi.</p>
+                            <p>Proyeksi ini memberikan kesan kedalaman yang lebih baik daripada cavalier.</p>
+                        `;
+                        break;
+
+                    case 'perspective1':
+                        explanation = `
+                            <p>Proyeksi <strong>Perspektif (1 Titik Hilang)</strong> memberikan efek kedalaman dengan garis-garis yang bertemu pada satu titik hilang.</p>
+                            <p>Proyeksi ini digunakan ketika satu permukaan objek sejajar dengan bidang gambar.</p>
+                            <p>Semua garis yang tidak sejajar dengan bidang gambar akan menuju ke satu titik hilang.</p>
+                            <p>Sering digunakan dalam gambar interior dan arsitektur.</p>
+                        `;
+                        break;
+
+                    case 'perspective2':
+                        explanation = `
+                            <p>Proyeksi <strong>Perspektif (2 Titik Hilang)</strong> menggunakan dua titik hilang pada garis horizon.</p>
+                            <p>Proyeksi ini digunakan ketika objek diposisikan sehingga hanya tepi vertikal yang sejajar dengan bidang gambar.</p>
+                            <p>Sering digunakan untuk gambar eksterior bangunan dan desain produk.</p>
+                        `;
+                        break;
+
+                    case 'perspective3':
+                        explanation = `
+                            <p>Proyeksi <strong>Perspektif (3 Titik Hilang)</strong> menggunakan tiga titik hilang.</p>
+                            <p>Proyeksi ini digunakan ketika tidak ada permukaan objek yang sejajar dengan bidang gambar.</p>
+                            <p>Memberikan tampilan yang paling dramatis dan realistis.</p>
+                            <p>Sering digunakan dalam seni konseptual dan gambar ilustrasi.</p>
+                        `;
+                        break;
+                }
+
+                explanationDiv.innerHTML = explanation;
+            }
+
+            // Event listeners
+            document.getElementById('projectionType').addEventListener('change', function () {
+                state.projectionType = this.value;
+                updateExplanation();
+                drawCube();
+            });
+
+            document.getElementById('alpha').addEventListener('input', function () {
+                state.alpha = this.value;
+                document.getElementById('alphaValue').textContent = this.value + '°';
+                drawCube();
+            });
+
+            document.getElementById('beta').addEventListener('input', function () {
+                state.beta = this.value;
+                document.getElementById('betaValue').textContent = this.value + '°';
+                drawCube();
+            });
+
+            document.getElementById('distance').addEventListener('input', function () {
+                state.distance = this.value;
+                document.getElementById('distanceValue').textContent = this.value;
+                drawCube();
+            });
+
+            document.getElementById('rotateX').addEventListener('input', function () {
+                state.rotateX = this.value;
+                document.getElementById('rotateXValue').textContent = this.value + '°';
+                drawCube();
+            });
+
+            document.getElementById('rotateY').addEventListener('input', function () {
+                state.rotateY = this.value;
+                document.getElementById('rotateYValue').textContent = this.value + '°';
+                drawCube();
+            });
+
+            document.getElementById('rotateZ').addEventListener('input', function () {
+                state.rotateZ = this.value;
+                document.getElementById('rotateZValue').textContent = this.value + '°';
+                drawCube();
+            });
+
+            document.getElementById('drawBtn').addEventListener('click', drawCube);
+            document.getElementById('resetBtn').addEventListener('click', function () {
+                state.alpha = 45;
+                state.beta = 45;
+                state.distance = 10;
+                state.rotateX = 0;
+                state.rotateY = 0;
+                state.rotateZ = 0;
+
+                document.getElementById('alpha').value = state.alpha;
+                document.getElementById('beta').value = state.beta;
+                document.getElementById('distance').value = state.distance;
+                document.getElementById('rotateX').value = state.rotateX;
+                document.getElementById('rotateY').value = state.rotateY;
+                document.getElementById('rotateZ').value = state.rotateZ;
+
+                document.getElementById('alphaValue').textContent = state.alpha + '°';
+                document.getElementById('betaValue').textContent = state.beta + '°';
+                document.getElementById('distanceValue').textContent = state.distance;
+                document.getElementById('rotateXValue').textContent = state.rotateX + '°';
+                document.getElementById('rotateYValue').textContent = state.rotateY + '°';
+                document.getElementById('rotateZValue').textContent = state.rotateZ + '°';
+
+                drawCube();
+            });
+
+            // Inisialisasi
+            updateExplanation();
+            drawCube();
+        });
+    </script>
+
+    <!-- My JavaScript -->
+    <script src="js/script.js"></script>
+</body>
+
+</html>

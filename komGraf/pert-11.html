@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Komputer Grafik</title>
+
+    <!-- My Style -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Feather Icons -->
+    <script src="https://unpkg.com/feather-icons"></script>
+</head>
+
+<body>
+
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo"><a href="index.html">Komputer<span>Grafik</span></a></div>
+                <div class="line"></div>
+                <button onclick="toggleSidebar()" class="toggle-button" id="toggle-button"><i
+                        data-feather="chevrons-right"></i></button>
+            </nav>
+        </div>
+    </header>
+
+    <aside class="sidebar" id="sidebar">
+        <ul class="sidebar-menu">
+            <!-- <button onclick=closeSidebar() id="close-btn"><i data-feather="x"></i></button> -->
+            <h3 class="logo"><a href="index.html">DAFTAR ISI</a></h1>
+
+                <li class="sidebar-item">
+                    <a href="pert-1.html">
+                        <i data-feather="book"></i>
+                        <span>Pertemuan 1</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="pert-2.html">
+                        <i data-feather="book"></i>
+                        <span>Pertemuan 2</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="pert-3.html">
+                        <i data-feather="book"></i>
+                        <span>Pertemuan 3</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="pert-4.html">
+                        <i data-feather="book"></i>
+                        <span>Pertemuan 4</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="pert-5.html">
+                        <i data-feather="book"></i>
+                        <span>Pertemuan 5</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="pert-6.html">
+                        <i data-feather="book"></i>
+                        <span>Pertemuan 6</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="pert-7.html">
+                        <i data-feather="book"></i>
+                        <span>Pertemuan 7</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="pert-8.html">
+                        <i data-feather="book"></i>
+                        <span>Pertemuan 8</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="pert-9.html">
+                        <i data-feather="book"></i>
+                        <span>Pertemuan 9</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="pert-10.html">
+                        <i data-feather="book"></i>
+                        <span>Pertemuan 10</span>
+                    </a>
+                </li>
+                <li class="sidebar-item active">
+                    <a href="pert-11.html">
+                        <i data-feather="book"></i>
+                        <span>Pertemuan 11</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="pert-12.html">
+                        <i data-feather="book"></i>
+                        <span>Pertemuan 12</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="pert-13.html">
+                        <i data-feather="book"></i>
+                        <span>Pertemuan 13</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="pert-14.html">
+                        <i data-feather="book"></i>
+                        <span>Pertemuan 14</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="tugas-dashboard.html">
+                        <i data-feather="book-open"></i>
+                        <span>Tugas Dashboard</span>
+                    </a>
+                </li>
+        </ul>
+    </aside>
+
+    <main>
+        <section id="pert-11" class="section">
+            <header>
+                <h1>Pertemuan 11 - Antialiasing</h1>
+            </header>
+
+            <div class="card">
+                <h2>Apa itu Antialiasing?</h2>
+                <p>Antialiasing adalah teknik dalam komputer grafik untuk mengurangi efek "bergergigi" (jagged edges)
+                    yang
+                    muncul pada tepi objek ketika ditampilkan pada resolusi yang lebih rendah. Teknik ini bekerja dengan
+                    mengubah
+                    warna piksel di sekitar tepi objek untuk menciptakan transisi yang lebih halus.</p>
+
+                <p>Masalah aliasing muncul karena:</p>
+                <ul>
+                    <li>Monitor memiliki resolusi terbatas (grid piksel)</li>
+                    <li>Garis diagonal dan kurva tidak sempurna saat dipetakan ke grid piksel</li>
+                    <li>Perbedaan antara representasi vektor (matematis) dan raster (piksel)</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h2>Perbandingan Aliased vs Anti-Aliased</h2>
+
+                <div class="legend">
+                    <div class="legend-item">
+                        <div class="legend-color legend-aliased"></div>
+                        <span>Aliased (Bergergigi)</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color legend-antialiased"></div>
+                        <span>Anti-Aliased (Halus)</span>
+                    </div>
+                </div>
+
+                <div class="comparison-container">
+                    <div class="comparison-item">
+                        <h3>Aliased</h3>
+                        <canvas id="aliasedCanvas" width="300" height="300"></canvas>
+                    </div>
+                    <div class="comparison-item">
+                        <h3>Anti-Aliased</h3>
+                        <canvas id="antialiasedCanvas" width="300" height="300"></canvas>
+                    </div>
+                </div>
+
+                <div class="controls">
+                    <div class="control-group">
+                        <h3>Kontrol Garis</h3>
+                        <div class="input-group">
+                            <label for="lineAngle">Sudut Garis (derajat): <span id="angleValue"
+                                    class="slider-value">45</span></label>
+                            <input type="range" id="lineAngle" min="0" max="360" value="45">
+                        </div>
+                        <div class="input-group">
+                            <label for="lineThickness">Ketebalan Garis: <span id="thicknessValue"
+                                    class="slider-value">1</span></label>
+                            <input type="range" id="lineThickness" min="1" max="10" value="1">
+                        </div>
+                        <button id="drawLines">Gambar Ulang Garis</button>
+                    </div>
+
+                    <div class="control-group">
+                        <h3>Kontrol Lingkaran</h3>
+                        <div class="input-group">
+                            <label for="circleSize">Ukuran Lingkaran: <span id="sizeValue"
+                                    class="slider-value">100</span></label>
+                            <input type="range" id="circleSize" min="50" max="200" value="100">
+                        </div>
+                        <div class="input-group">
+                            <label for="aaLevel">Tingkat Antialiasing:
+                                <select id="aaLevel">
+                                    <option value="1">1x</option>
+                                    <option value="2" selected>2x</option>
+                                    <option value="4">4x</option>
+                                    <option value="8">8x</option>
+                                </select>
+                            </label>
+                        </div>
+                        <button id="drawCircles">Gambar Ulang Lingkaran</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2>Jenis-jenis Antialiasing</h2>
+
+                <div class="aa-types">
+                    <div class="aa-type">
+                        <h3>FXAA (Fast Approximate Anti-Aliasing)</h3>
+                        <p><strong>Keunggulan:</strong> Cepat, tidak membebani GPU berat</p>
+                        <p><strong>Kelemahan:</strong> Dapat membuat gambar menjadi kabur/buram</p>
+                        <p><strong>Penggunaan:</strong> Game mobile, perangkat dengan GPU rendah</p>
+                    </div>
+
+                    <div class="aa-type">
+                        <h3>MSAA (Multisample Anti-Aliasing)</h3>
+                        <p><strong>Keunggulan:</strong> Hasil lebih baik dari FXAA, hanya memproses tepi objek</p>
+                        <p><strong>Kelemahan:</strong> Masih meninggalkan efek bergergigi di beberapa area</p>
+                        <p><strong>Penggunaan:</strong> Game PC kelas menengah</p>
+                    </div>
+
+                    <div class="aa-type">
+                        <h3>TXAA (Temporal Anti-Aliasing)</h3>
+                        <p><strong>Keunggulan:</strong> Menghasilkan gambar halus sempurna</p>
+                        <p><strong>Kelemahan:</strong> Membuat gambar lebih kabur, beban GPU berat</p>
+                        <p><strong>Penggunaan:</strong> Game PC high-end, cinematic</p>
+                    </div>
+                </div>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Jenis</th>
+                            <th>Kinerja</th>
+                            <th>Kualitas</th>
+                            <th>Beban GPU</th>
+                            <th>Rekomendasi</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>FXAA</td>
+                            <td>★★★★★</td>
+                            <td>★★☆☆☆</td>
+                            <td>★☆☆☆☆</td>
+                            <td>Mobile/GPU rendah</td>
+                        </tr>
+                        <tr>
+                            <td>MSAA</td>
+                            <td>★★★☆☆</td>
+                            <td>★★★★☆</td>
+                            <td>★★★☆☆</td>
+                            <td>PC menengah</td>
+                        </tr>
+                        <tr>
+                            <td>TXAA</td>
+                            <td>★☆☆☆☆</td>
+                            <td>★★★★★</td>
+                            <td>★★★★★</td>
+                            <td>PC high-end</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="card">
+                <h2>Rekomendasi Penggunaan</h2>
+
+                <div class="recommendation">
+                    <h3>Untuk PC</h3>
+                    <p>✅ Direkomendasikan menggunakan antialiasing (MSAA atau TXAA)</p>
+                    <p>✅ Monitor besar (15 inci ke atas) memerlukan antialiasing untuk gambar halus</p>
+                    <p>✅ Pastikan hardware PC cukup kuat (terutama GPU)</p>
+                    <p>✅ Gunakan pendingin yang memadai untuk menghindari overheating</p>
+                </div>
+
+                <div class="recommendation">
+                    <h3>Untuk HP (Mobile)</h3>
+                    <p>❌ Sebaiknya matikan antialiasing</p>
+                    <p>❌ HP tidak memiliki pendingin memadai untuk beban GPU tinggi</p>
+                    <p>⚠️ Jika diperlukan, gunakan FXAA dengan resolusi sesuai layar</p>
+                    <p>⚠️ Thermal throttling dapat menurunkan performa dan pengalaman gaming</p>
+                </div>
+
+                <h3>Pertimbangan Lain</h3>
+                <ul>
+                    <li>Antialiasing kurang ideal untuk tipografi/cetak (gunakan grafik vektor)</li>
+                    <li>Fotografi digital tetap membutuhkan antialiasing</li>
+                    <li>Video game modern menggunakan kombinasi teknik antialiasing</li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+
+    <script>
+        feather.replace();
+
+        // Elemen UI
+        const lineAngle = document.getElementById('lineAngle');
+        const lineThickness = document.getElementById('lineThickness');
+        const circleSize = document.getElementById('circleSize');
+        const aaLevel = document.getElementById('aaLevel');
+        const angleValue = document.getElementById('angleValue');
+        const thicknessValue = document.getElementById('thicknessValue');
+        const sizeValue = document.getElementById('sizeValue');
+
+        // Canvas elements
+        const aliasedCanvas = document.getElementById('aliasedCanvas');
+        const antialiasedCanvas = document.getElementById('antialiasedCanvas');
+
+        // Update slider values
+        lineAngle.addEventListener('input', () => {
+            angleValue.textContent = lineAngle.value;
+        });
+
+        lineThickness.addEventListener('input', () => {
+            thicknessValue.textContent = lineThickness.value;
+        });
+
+        circleSize.addEventListener('input', () => {
+            sizeValue.textContent = circleSize.value;
+        });
+
+        // Draw lines function
+        function drawLines() {
+            const angle = parseFloat(lineAngle.value) * Math.PI / 180;
+            const thickness = parseInt(lineThickness.value);
+            const centerX = aliasedCanvas.width / 2;
+            const centerY = aliasedCanvas.height / 2;
+            const length = 120;
+
+            // Clear canvases
+            const aliasedCtx = aliasedCanvas.getContext('2d');
+            const antialiasedCtx = antialiasedCanvas.getContext('2d');
+
+            aliasedCtx.clearRect(0, 0, aliasedCanvas.width, aliasedCanvas.height);
+            antialiasedCtx.clearRect(0, 0, antialiasedCanvas.width, antialiasedCanvas.height);
+
+            // Draw aliased line (no anti-aliasing)
+            aliasedCtx.strokeStyle = '#f5222d';
+            aliasedCtx.lineWidth = thickness;
+            aliasedCtx.beginPath();
+            aliasedCtx.moveTo(centerX - Math.cos(angle) * length, centerY - Math.sin(angle) * length);
+            aliasedCtx.lineTo(centerX + Math.cos(angle) * length, centerY + Math.sin(angle) * length);
+            aliasedCtx.stroke();
+
+            // Draw anti-aliased line
+            antialiasedCtx.strokeStyle = '#52c41a';
+            antialiasedCtx.lineWidth = thickness;
+            antialiasedCtx.lineCap = 'round';
+            antialiasedCtx.lineJoin = 'round';
+            antialiasedCtx.beginPath();
+            antialiasedCtx.moveTo(centerX - Math.cos(angle) * length, centerY - Math.sin(angle) * length);
+            antialiasedCtx.lineTo(centerX + Math.cos(angle) * length, centerY + Math.sin(angle) * length);
+            antialiasedCtx.stroke();
+        }
+
+        // Draw circles function
+        function drawCircles() {
+            const size = parseInt(circleSize.value);
+            const centerX = aliasedCanvas.width / 2;
+            const centerY = aliasedCanvas.height / 2;
+
+            // Clear canvases
+            const aliasedCtx = aliasedCanvas.getContext('2d');
+            const antialiasedCtx = antialiasedCanvas.getContext('2d');
+
+            // Draw aliased circle (no anti-aliasing)
+            aliasedCtx.fillStyle = '#f5222d';
+            aliasedCtx.beginPath();
+            aliasedCtx.arc(centerX, centerY, size / 2, 0, Math.PI * 2);
+            aliasedCtx.fill();
+
+            // Draw anti-aliased circle
+            antialiasedCtx.fillStyle = '#52c41a';
+            antialiasedCtx.beginPath();
+            antialiasedCtx.arc(centerX, centerY, size / 2, 0, Math.PI * 2);
+            antialiasedCtx.fill();
+        }
+
+        // Initial draw
+        drawLines();
+        drawCircles();
+
+        // Event listeners
+        document.getElementById('drawLines').addEventListener('click', drawLines);
+        document.getElementById('drawCircles').addEventListener('click', drawCircles);
+    </script>
+
+    <!-- My JavaScript -->
+    <script src="js/script.js"></script>
+</body>
+
+</html>
