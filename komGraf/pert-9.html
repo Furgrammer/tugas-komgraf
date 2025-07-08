@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Komputer Grafik</title>
+
+    <!-- My Style -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Feather Icons -->
+    <script src="https://unpkg.com/feather-icons"></script>
+</head>
+
+<body>
+
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo"><a href="index.html">Komputer<span>Grafik</span></a></div>
+                <div class="line"></div>
+                <button onclick="toggleSidebar()" class="toggle-button" id="toggle-button"><i
+                        data-feather="chevrons-right"></i></button>
+            </nav>
+        </div>
+    </header>
+
+    <aside class="sidebar" id="sidebar">
+        <ul class="sidebar-menu">
+            <!-- <button onclick=closeSidebar() id="close-btn"><i data-feather="x"></i></button> -->
+            <h3 class="logo"><a href="index.html">DAFTAR ISI</a></h1>
+
+                <li class="sidebar-item">
+                    <a href="pert-1.html">
+                        <i data-feather="book"></i>
+                        <span>Pertemuan 1</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="pert-2.html">
+                        <i data-feather="book"></i>
+                        <span>Pertemuan 2</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="pert-3.html">
+                        <i data-feather="book"></i>
+                        <span>Pertemuan 3</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="pert-4.html">
+                        <i data-feather="book"></i>
+                        <span>Pertemuan 4</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="pert-5.html">
+                        <i data-feather="book"></i>
+                        <span>Pertemuan 5</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="pert-6.html">
+                        <i data-feather="book"></i>
+                        <span>Pertemuan 6</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="pert-7.html">
+                        <i data-feather="book"></i>
+                        <span>Pertemuan 7</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="pert-8.html">
+                        <i data-feather="book"></i>
+                        <span>Pertemuan 8</span>
+                    </a>
+                </li>
+                <li class="sidebar-item active">
+                    <a href="pert-9.html">
+                        <i data-feather="book"></i>
+                        <span>Pertemuan 9</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="pert-10.html">
+                        <i data-feather="book"></i>
+                        <span>Pertemuan 10</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="pert-11.html">
+                        <i data-feather="book"></i>
+                        <span>Pertemuan 11</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="pert-12.html">
+                        <i data-feather="book"></i>
+                        <span>Pertemuan 12</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="pert-13.html">
+                        <i data-feather="book"></i>
+                        <span>Pertemuan 13</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="pert-14.html">
+                        <i data-feather="book"></i>
+                        <span>Pertemuan 14</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="tugas-dashboard.html">
+                        <i data-feather="book-open"></i>
+                        <span>Tugas Dashboard</span>
+                    </a>
+                </li>
+        </ul>
+    </aside>
+
+    <main>
+        <section id="pert-9" class="section">
+            <header>
+                <h1>Pertemuan 9 - Dilatasi dan Shear</h1>
+            </header>
+
+            <div class="intro">
+                <h2>Pengertian Dilatasi dan Shear</h2>
+                <p><strong>Dilatasi (Refleksi)</strong> adalah transformasi yang menghasilkan pencerminan suatu objek
+                    terhadap
+                    garis atau sumbu tertentu.</p>
+                <p><strong>Shear</strong> adalah transformasi yang menggeser sisi tertentu dari suatu objek, mengubah
+                    bentuknya
+                    dengan mempertahankan luas area.</p>
+            </div>
+
+            <div class="content">
+                <div class="controls">
+                    <h2>Kontrol Transformasi</h2>
+
+                    <div class="control-group">
+                        <h3>Pilih Objek</h3>
+                        <select id="objectType">
+                            <option value="triangle">Segitiga</option>
+                            <option value="square">Persegi</option>
+                            <option value="pentagon">Pentagon</option>
+                        </select>
+                    </div>
+
+                    <div class="control-group">
+                        <h3>Transformasi Dilatasi (Refleksi)</h3>
+                        <select id="reflectionType">
+                            <option value="none">-- Pilih Jenis Refleksi --</option>
+                            <option value="x">Sumbu X</option>
+                            <option value="y">Sumbu Y</option>
+                            <option value="origin">Titik Asal (0,0)</option>
+                            <option value="y=x">Garis y = x</option>
+                            <option value="y=-x">Garis y = -x</option>
+                        </select>
+                    </div>
+
+                    <div class="control-group">
+                        <h3>Transformasi Shear</h3>
+                        <label for="shearX">Shear X (shx):</label>
+                        <input type="range" id="shearX" min="-2" max="2" step="0.1" value="0">
+                        <span id="shearXValue">0</span>
+
+                        <label for="shearY">Shear Y (shy):</label>
+                        <input type="range" id="shearY" min="-2" max="2" step="0.1" value="0">
+                        <span id="shearYValue">0</span>
+                    </div>
+
+                    <button class="btn" id="applyTransform">Terapkan Transformasi</button>
+                    <button class="btn" id="resetTransform">Reset</button>
+                </div>
+
+                <div class="visualization">
+                    <h2>Visualisasi Transformasi</h2>
+                    <canvas id="transformCanvas" width="400" height="400"></canvas>
+
+                    <div class="legend">
+                        <div class="legend-item">
+                            <div class="legend-color original-color"></div>
+                            <span>Objek Asli</span>
+                        </div>
+                        <div class="legend-item">
+                            <div class="legend-color dilatasi-color"></div>
+                            <span>Hasil Dilatasi</span>
+                        </div>
+                        <div class="legend-item">
+                            <div class="legend-color shear-color"></div>
+                            <span>Hasil Shear</span>
+                        </div>
+                    </div>
+
+                    <div class="matrix-container">
+                        <h3>Matriks Transformasi</h3>
+                        <table class="matrix">
+                            <tr>
+                                <td id="m11">1</td>
+                                <td id="m12">0</td>
+                            </tr>
+                            <tr>
+                                <td id="m21">0</td>
+                                <td id="m22">1</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <div class="result">
+                <h2>Hasil Transformasi</h2>
+                <table id="resultTable">
+                    <thead>
+                        <tr>
+                            <th>Titik</th>
+                            <th>Koordinat Asli</th>
+                            <th>Setelah Dilatasi</th>
+                            <th>Setelah Shear</th>
+                        </tr>
+                    </thead>
+                    <tbody id="resultBody">
+                        <!-- Hasil akan diisi oleh JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="explanation">
+                <h2>Penjelasan Matematis</h2>
+
+                <h3>Dilatasi (Refleksi)</h3>
+                <div class="formula">
+                    <p>Refleksi terhadap sumbu X:
+                        [1 0]
+                        [0 -1]</p>
+
+                    <p>Refleksi terhadap sumbu Y:
+                        [-1 0]
+                        [ 0 1]</p>
+
+                    <p>Refleksi terhadap titik asal (0,0):
+                        [-1 0]
+                        [ 0 -1]</p>
+
+                    <p>Refleksi terhadap garis y = x:
+                        [0 1]
+                        [1 0]</p>
+
+                    <p>Refleksi terhadap garis y = -x:
+                        [ 0 -1]
+                        [-1 0]</p>
+                </div>
+
+                <h3>Shear</h3>
+                <div class="formula">
+                    <p>Transformasi Shear:</p>
+                    <p>x' = x + shx * y</p>
+                    <p>y' = shy * x + y</p>
+
+                    <p>Matriks transformasi:</p>
+                    <p>[1 shx]</p>
+                    <p>[shy 1 ]</p>
+                </div>
+
+                <h3>Proses Transformasi</h3>
+                <p>Setiap titik objek dikalikan dengan matriks transformasi untuk mendapatkan posisi baru:</p>
+                <div class="formula">
+                    [x'] = [a b] * [x]
+                    [y'] [c d] [y]
+                </div>
+            </div>
+        </section>
+    </main>
+
+
+    <script>
+        feather.replace();
+
+        document.addEventListener("DOMContentLoaded", function () {
+            // Hanya jalankan jika section #pert-9 ada (aktif)
+            const pert9Section = document.getElementById("pert-9");
+            if (!pert9Section) return;
+
+            // Inisialisasi canvas dan context hanya di dalam #pert-9
+            const canvas = pert9Section.querySelector("#transformCanvas");
+            if (!canvas) return;
+            const ctx = canvas.getContext("2d");
+
+            // Elemen kontrol di dalam #pert-9
+            const objectType = pert9Section.querySelector("#objectType");
+            const reflectionType = pert9Section.querySelector("#reflectionType");
+            const shearX = pert9Section.querySelector("#shearX");
+            const shearY = pert9Section.querySelector("#shearY");
+            const shearXValue = pert9Section.querySelector("#shearXValue");
+            const shearYValue = pert9Section.querySelector("#shearYValue");
+            const applyBtn = pert9Section.querySelector("#applyTransform");
+            const resetBtn = pert9Section.querySelector("#resetTransform");
+            const resultBody = pert9Section.querySelector("#resultBody");
+            const m11 = pert9Section.querySelector("#m11");
+            const m12 = pert9Section.querySelector("#m12");
+            const m21 = pert9Section.querySelector("#m21");
+            const m22 = pert9Section.querySelector("#m22");
+
+            // Variabel state
+            let originalObject = [];
+            let reflectedObject = [];
+            let shearedObject = [];
+
+            // Fungsi untuk menggambar grid
+            function drawGrid() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+                // Gambar grid
+                ctx.strokeStyle = "#e0e0e0";
+                ctx.lineWidth = 0.5;
+
+                // Garis vertikal
+                for (let x = 0; x <= canvas.width; x += 40) {
+                    ctx.beginPath();
+                    ctx.moveTo(x, 0);
+                    ctx.lineTo(x, canvas.height);
+                    ctx.stroke();
+
+                    // Label sumbu X
+                    if (x !== canvas.width / 2) {
+                        ctx.fillStyle = "#888";
+                        ctx.font = "10px Arial";
+                        ctx.fillText((x - canvas.width / 2) / 40, x, canvas.height / 2 + 15);
+                    }
+                }
+
+                // Garis horizontal
+                for (let y = 0; y <= canvas.height; y += 40) {
+                    ctx.beginPath();
+                    ctx.moveTo(0, y);
+                    ctx.lineTo(canvas.width, y);
+                    ctx.stroke();
+
+                    // Label sumbu Y
+                    if (y !== canvas.height / 2) {
+                        ctx.fillStyle = "#888";
+                        ctx.font = "10px Arial";
+                        ctx.fillText((canvas.height / 2 - y) / 40, canvas.width / 2 + 5, y);
+                    }
+                }
+
+                // Sumbu X dan Y
+                ctx.strokeStyle = "#000";
+                ctx.lineWidth = 1;
+
+                // Sumbu X
+                ctx.beginPath();
+                ctx.moveTo(0, canvas.height / 2);
+                ctx.lineTo(canvas.width, canvas.height / 2);
+                ctx.stroke();
+
+                // Sumbu Y
+                ctx.beginPath();
+                ctx.moveTo(canvas.width / 2, 0);
+                ctx.lineTo(canvas.width / 2, canvas.height);
+                ctx.stroke();
+
+                // Label sumbu
+                ctx.fillStyle = "#000";
+                ctx.font = "12px Arial";
+                ctx.fillText("X", canvas.width - 10, canvas.height / 2 - 10);
+                ctx.fillText("Y", canvas.width / 2 + 10, 10);
+                ctx.fillText("O", canvas.width / 2 + 5, canvas.height / 2 + 15);
+            }
+
+            // Fungsi untuk membuat objek
+            function createObject(type) {
+                const centerX = canvas.width / 2;
+                const centerY = canvas.height / 2;
+                const size = 80;
+
+                switch (type) {
+                    case "triangle":
+                        return [
+                            { x: centerX, y: centerY - size },
+                            { x: centerX - size, y: centerY + size },
+                            { x: centerX + size, y: centerY + size },
+                        ];
+                    case "square":
+                        return [
+                            { x: centerX - size, y: centerY - size },
+                            { x: centerX + size, y: centerY - size },
+                            { x: centerX + size, y: centerY + size },
+                            { x: centerX - size, y: centerY + size },
+                        ];
+                    case "pentagon":
+                        const points = [];
+                        for (let i = 0; i < 5; i++) {
+                            const angle = (i * 2 * Math.PI) / 5 - Math.PI / 2;
+                            points.push({
+                                x: centerX + size * Math.cos(angle),
+                                y: centerY + size * Math.sin(angle),
+                            });
+                        }
+                        return points;
+                    default:
+                        return [
+                            { x: centerX, y: centerY - size },
+                            { x: centerX - size, y: centerY + size },
+                            { x: centerX + size, y: centerY + size },
+                        ];
+                }
+            }
+
+            // Fungsi untuk menggambar objek
+            function drawObject(points, color) {
+                if (!points.length) return;
+                ctx.beginPath();
+                ctx.moveTo(points[0].x, points[0].y);
+
+                for (let i = 1; i < points.length; i++) {
+                    ctx.lineTo(points[i].x, points[i].y);
+                }
+
+                ctx.closePath();
+                ctx.strokeStyle = color;
+                ctx.lineWidth = 2;
+                ctx.stroke();
+
+                // Gambar titik
+                ctx.fillStyle = color;
+                for (const point of points) {
+                    ctx.beginPath();
+                    ctx.arc(point.x, point.y, 4, 0, Math.PI * 2);
+                    ctx.fill();
+                }
+            }
+
+            // Fungsi untuk menerapkan refleksi
+            function applyReflection(points, type) {
+                const centerX = canvas.width / 2;
+                const centerY = canvas.height / 2;
+
+                return points.map((point) => {
+                    // Relatif terhadap pusat canvas
+                    const relX = point.x - centerX;
+                    const relY = point.y - centerY;
+
+                    let newX = relX;
+                    let newY = relY;
+
+                    switch (type) {
+                        case "x": // Refleksi sumbu X
+                            newY = -relY;
+                            break;
+                        case "y": // Refleksi sumbu Y
+                            newX = -relX;
+                            break;
+                        case "origin": // Refleksi titik asal
+                            newX = -relX;
+                            newY = -relY;
+                            break;
+                        case "y=x": // Refleksi garis y = x
+                            [newX, newY] = [relY, relX];
+                            break;
+                        case "y=-x": // Refleksi garis y = -x
+                            [newX, newY] = [-relY, -relX];
+                            break;
+                        default:
+                        // Tidak ada transformasi
+                    }
+
+                    return {
+                        x: newX + centerX,
+                        y: newY + centerY,
+                    };
+                });
+            }
+
+            // Fungsi untuk menerapkan shear
+            function applyShear(points, shx, shy) {
+                const centerX = canvas.width / 2;
+                const centerY = canvas.height / 2;
+
+                return points.map((point) => {
+                    // Relatif terhadap pusat canvas
+                    const relX = point.x - centerX;
+                    const relY = point.y - centerY;
+
+                    // Terapkan shear
+                    const newX = relX + shx * relY;
+                    const newY = shy * relX + relY;
+
+                    return {
+                        x: newX + centerX,
+                        y: newY + centerY,
+                    };
+                });
+            }
+
+            // Fungsi untuk memperbarui matriks tampilan
+            function updateMatrix(reflection, shx, shy) {
+                let a = 1,
+                    b = 0,
+                    c = 0,
+                    d = 1;
+
+                // Terapkan refleksi
+                switch (reflection) {
+                    case "x": // Refleksi sumbu X
+                        d = -1;
+                        break;
+                    case "y": // Refleksi sumbu Y
+                        a = -1;
+                        break;
+                    case "origin": // Refleksi titik asal
+                        a = -1;
+                        d = -1;
+                        break;
+                    case "y=x": // Refleksi garis y = x
+                        a = 0;
+                        b = 1;
+                        c = 1;
+                        d = 0;
+                        break;
+                    case "y=-x": // Refleksi garis y = -x
+                        a = 0;
+                        b = -1;
+                        c = -1;
+                        d = 0;
+                        break;
+                    default:
+                    // Tidak ada perubahan
+                }
+
+                // Terapkan shear
+                b += shx;
+                c += shy;
+
+                // Perbarui tampilan matriks
+                m11.textContent = a.toFixed(1);
+                m12.textContent = b.toFixed(1);
+                m21.textContent = c.toFixed(1);
+                m22.textContent = d.toFixed(1);
+            }
+
+            // Fungsi untuk memperbarui tabel hasil
+            function updateResultTable() {
+                resultBody.innerHTML = "";
+
+                for (let i = 0; i < originalObject.length; i++) {
+                    const row = document.createElement("tr");
+
+                    const originalPoint = originalObject[i];
+                    const reflectedPoint = reflectedObject[i] || originalPoint;
+                    const shearedPoint = shearedObject[i] || originalPoint;
+
+                    row.innerHTML = `
+                      <td>P${i + 1}</td>
+                      <td>(${(
+                            (originalPoint.x - canvas.width / 2) /
+                            40
+                        ).toFixed(2)}, ${(
+                            (canvas.height / 2 - originalPoint.y) /
+                            40
+                        ).toFixed(2)})</td>
+                      <td>(${(
+                            (reflectedPoint.x - canvas.width / 2) /
+                            40
+                        ).toFixed(2)}, ${(
+                            (canvas.height / 2 - reflectedPoint.y) /
+                            40
+                        ).toFixed(2)})</td>
+                      <td>(${((shearedPoint.x - canvas.width / 2) / 40).toFixed(
+                            2
+                        )}, ${((canvas.height / 2 - shearedPoint.y) / 40).toFixed(
+                            2
+                        )})</td>
+                  `;
+
+                    resultBody.appendChild(row);
+                }
+            }
+
+            // Fungsi untuk merender semua objek
+            function renderScene() {
+                drawGrid();
+
+                // Gambar objek asli
+                drawObject(originalObject, "#2563eb");
+
+                // Gambar hasil refleksi jika ada
+                if (reflectedObject.length > 0) {
+                    drawObject(reflectedObject, "#ec4899");
+                }
+
+                // Gambar hasil shear jika ada
+                if (shearedObject.length > 0) {
+                    drawObject(shearedObject, "#10b981");
+                }
+
+                updateResultTable();
+            }
+
+            // Event listeners
+            applyBtn.addEventListener("click", () => {
+                const reflection = reflectionType.value;
+                const shx = parseFloat(shearX.value);
+                const shy = parseFloat(shearY.value);
+
+                reflectedObject =
+                    reflection !== "none" ? applyReflection(originalObject, reflection) : [];
+
+                shearedObject =
+                    shx !== 0 || shy !== 0 ? applyShear(originalObject, shx, shy) : [];
+
+                updateMatrix(reflection, shx, shy);
+                renderScene();
+            });
+
+            resetBtn.addEventListener("click", () => {
+                reflectionType.value = "none";
+                shearX.value = 0;
+                shearY.value = 0;
+                shearXValue.textContent = "0";
+                shearYValue.textContent = "0";
+
+                reflectedObject = [];
+                shearedObject = [];
+
+                updateMatrix("none", 0, 0);
+                renderScene();
+            });
+
+            shearX.addEventListener("input", () => {
+                shearXValue.textContent = shearX.value;
+            });
+
+            shearY.addEventListener("input", () => {
+                shearYValue.textContent = shearY.value;
+            });
+
+            objectType.addEventListener("change", () => {
+                originalObject = createObject(objectType.value);
+                reflectedObject = [];
+                shearedObject = [];
+                updateMatrix(
+                    reflectionType.value,
+                    parseFloat(shearX.value),
+                    parseFloat(shearY.value)
+                );
+                renderScene();
+            });
+
+            // Inisialisasi
+            originalObject = createObject(objectType.value);
+            updateMatrix("none", 0, 0);
+            drawGrid();
+            renderScene();
+        });
+    </script>
+
+    <!-- My JavaScript -->
+    <script src="js/script.js"></script>
+</body>
+
+</html>

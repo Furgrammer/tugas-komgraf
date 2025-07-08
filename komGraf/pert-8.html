@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Komputer Grafik</title>
+
+    <!-- My Style -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Feather Icons -->
+    <script src="https://unpkg.com/feather-icons"></script>
+</head>
+
+<body>
+
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo"><a href="index.html">Komputer<span>Grafik</span></a></div>
+                <div class="line"></div>
+                <button onclick="toggleSidebar()" class="toggle-button" id="toggle-button"><i
+                        data-feather="chevrons-right"></i></button>
+            </nav>
+        </div>
+    </header>
+
+    <aside class="sidebar" id="sidebar">
+        <ul class="sidebar-menu">
+            <!-- <button onclick=closeSidebar() id="close-btn"><i data-feather="x"></i></button> -->
+            <h3 class="logo"><a href="index.html">DAFTAR ISI</a></h1>
+
+                <li class="sidebar-item">
+                    <a href="pert-1.html">
+                        <i data-feather="book"></i>
+                        <span>Pertemuan 1</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="pert-2.html">
+                        <i data-feather="book"></i>
+                        <span>Pertemuan 2</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="pert-3.html">
+                        <i data-feather="book"></i>
+                        <span>Pertemuan 3</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="pert-4.html">
+                        <i data-feather="book"></i>
+                        <span>Pertemuan 4</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="pert-5.html">
+                        <i data-feather="book"></i>
+                        <span>Pertemuan 5</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="pert-6.html">
+                        <i data-feather="book"></i>
+                        <span>Pertemuan 6</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="pert-7.html">
+                        <i data-feather="book"></i>
+                        <span>Pertemuan 7</span>
+                    </a>
+                </li>
+                <li class="sidebar-item active">
+                    <a href="pert-8.html">
+                        <i data-feather="book"></i>
+                        <span>Pertemuan 8</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="pert-9.html">
+                        <i data-feather="book"></i>
+                        <span>Pertemuan 9</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="pert-10.html">
+                        <i data-feather="book"></i>
+                        <span>Pertemuan 10</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="pert-11.html">
+                        <i data-feather="book"></i>
+                        <span>Pertemuan 11</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="pert-12.html">
+                        <i data-feather="book"></i>
+                        <span>Pertemuan 12</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="pert-13.html">
+                        <i data-feather="book"></i>
+                        <span>Pertemuan 13</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="pert-14.html">
+                        <i data-feather="book"></i>
+                        <span>Pertemuan 14</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="tugas-dashboard.html">
+                        <i data-feather="book-open"></i>
+                        <span>Tugas Dashboard</span>
+                    </a>
+                </li>
+        </ul>
+    </aside>
+
+    <main>
+        <section id="pert-8" class="section">
+            <header>
+                <h1>Pertemuan 8 - Transformasi Geometri 2D</h1>
+            </header>
+
+            <div class="card">
+                <h2>Transformasi Geometri 2D</h2>
+                <p>Transformasi geometri adalah operasi untuk memodifikasi objek tanpa merusaknya, termasuk translasi
+                    (pergeseran) dan rotasi (perputaran).</p>
+
+                <div class="grid">
+                    <div class="control-group">
+                        <h3>Bentuk Objek</h3>
+                        <div class="input-group">
+                            <label for="shapeType">Pilih Bentuk:</label>
+                            <select id="shapeType">
+                                <option value="triangle">Segitiga</option>
+                                <option value="rectangle">Persegi Panjang</option>
+                                <option value="pentagon">Pentagon</option>
+                                <option value="custom">Kustom (Gambar Sendiri)</option>
+                            </select>
+                        </div>
+
+                        <div class="input-group">
+                            <label for="resetShape">Atur Ulang Bentuk:</label>
+                            <button id="resetShape" class="btn">Reset Objek</button>
+                        </div>
+                    </div>
+
+                    <div class="control-group">
+                        <h3>Translasi (Pergeseran)</h3>
+                        <div class="input-group">
+                            <label for="tx">Translasi X (tx):</label>
+                            <input type="range" id="tx" min="-100" max="100" value="0">
+                            <span id="txValue">0</span>
+                        </div>
+
+                        <div class="input-group">
+                            <label for="ty">Translasi Y (ty):</label>
+                            <input type="range" id="ty" min="-100" max="100" value="0">
+                            <span id="tyValue">0</span>
+                        </div>
+
+                        <div class="btn-group">
+                            <button id="applyTranslation" class="btn">Terapkan Translasi</button>
+                            <button id="resetTranslation" class="btn btn-accent">Reset Translasi</button>
+                        </div>
+                    </div>
+
+                    <div class="control-group">
+                        <h3>Rotasi (Perputaran)</h3>
+                        <div class="input-group">
+                            <label for="rotationAngle">Sudut Rotasi (θ):</label>
+                            <input type="range" id="rotationAngle" min="-360" max="360" value="0">
+                            <span id="rotationAngleValue">0°</span>
+                        </div>
+
+                        <div class="input-group">
+                            <label for="pivotType">Titik Pivot:</label>
+                            <select id="pivotType">
+                                <option value="centroid">Centroid (Titik Pusat)</option>
+                                <option value="origin">Origin (0,0)</option>
+                                <option value="custom">Kustom</option>
+                            </select>
+                        </div>
+
+                        <div class="btn-group">
+                            <button id="applyRotation" class="btn">Terapkan Rotasi</button>
+                            <button id="resetRotation" class="btn btn-accent">Reset Rotasi</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="visualization">
+                    <div class="canvas-container">
+                        <canvas id="transformCanvas" width="600" height="400"></canvas>
+                    </div>
+
+                    <div class="legend">
+                        <div class="legend-item">
+                            <div class="legend-color legend-original"></div>
+                            <span>Objek Asli</span>
+                        </div>
+                        <div class="legend-item">
+                            <div class="legend-color legend-transformed"></div>
+                            <span>Objek Hasil Transformasi</span>
+                        </div>
+                        <div class="legend-item">
+                            <div class="legend-color legend-pivot"></div>
+                            <span>Titik Pivot</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="explanation">
+                    <h3>Matriks Transformasi</h3>
+                    <div class="matrix-container">
+                        <div>
+                            <div class="matrix-title">Matriks Translasi</div>
+                            <table class="matrix">
+                                <tr>
+                                    <td>1</td>
+                                    <td>0</td>
+                                    <td>tx</td>
+                                </tr>
+                                <tr>
+                                    <td>0</td>
+                                    <td>1</td>
+                                    <td>ty</td>
+                                </tr>
+                                <tr>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td>1</td>
+                                </tr>
+                            </table>
+                        </div>
+
+                        <div>
+                            <div class="matrix-title">Matriks Rotasi</div>
+                            <table class="matrix">
+                                <tr>
+                                    <td>cosθ</td>
+                                    <td>-sinθ</td>
+                                    <td>0</td>
+                                </tr>
+                                <tr>
+                                    <td>sinθ</td>
+                                    <td>cosθ</td>
+                                    <td>0</td>
+                                </tr>
+                                <tr>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td>1</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="formula">
+                        <p>Rumus Translasi: x' = x + tx, y' = y + ty</p>
+                        <p>Rumus Rotasi (terhadap origin):
+                            x' = x·cosθ - y·sinθ,
+                            y' = x·sinθ + y·cosθ</p>
+                        <p>Rumus Rotasi (terhadap titik pivot (xp, yp)):
+                            x' = xp + (x - xp)·cosθ - (y - yp)·sinθ,
+                            y' = yp + (x - xp)·sinθ + (y - yp)·cosθ</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2>Contoh Transformasi</h2>
+                <div class="grid">
+                    <div class="control-group">
+                        <h3>Contoh Translasi</h3>
+                        <p>Objek segitiga dengan titik A(10,10), B(30,10), C(10,30)</p>
+                        <p>Translasi: tx = 10, ty = 20</p>
+                        <div class="formula">
+                            <p>A' = (10+10, 10+20) = (20,30)</p>
+                            <p>B' = (30+10, 10+20) = (40,30)</p>
+                            <p>C' = (10+10, 30+20) = (20,50)</p>
+                        </div>
+                        <button id="exampleTranslation" class="btn">Lihat Contoh</button>
+                    </div>
+
+                    <div class="control-group">
+                        <h3>Contoh Rotasi</h3>
+                        <p>Objek segitiga dengan titik A(10,10), B(30,10), C(10,30)</p>
+                        <p>Rotasi: θ = 30°, pivot (10,10)</p>
+                        <div class="formula">
+                            <p>A' = (10,10) [tidak berubah]</p>
+                            <p>B' = (10 + (30-10)·cos30 - (10-10)·sin30, 10 + (30-10)·sin30 + (10-10)·cos30)</p>
+                            <p>B' = (10 + 20·0.866 - 0, 10 + 20·0.5 + 0) ≈ (27.32, 20)</p>
+                        </div>
+                        <button id="exampleRotation" class="btn">Lihat Contoh</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+
+    <script>
+        feather.replace();
+
+        document.addEventListener('DOMContentLoaded', function () {
+            // Elemen canvas dan konteks
+            const canvas = document.getElementById('transformCanvas');
+            const ctx = canvas.getContext('2d');
+
+            // State aplikasi
+            const state = {
+                shape: 'triangle',
+                originalShape: [],
+                transformedShape: [],
+                tx: 0,
+                ty: 0,
+                rotationAngle: 0,
+                pivotType: 'centroid',
+                pivotPoint: { x: 0, y: 0 },
+                customPivot: { x: 0, y: 0 }
+            };
+
+            // Dimensi canvas
+            const centerX = canvas.width / 2;
+            const centerY = canvas.height / 2;
+            const scale = 5;
+
+            // Fungsi untuk menggambar grid
+            function drawGrid() {
+                ctx.strokeStyle = '#e5e7eb';
+                ctx.lineWidth = 1;
+
+                // Garis vertikal
+                for (let x = 0; x <= canvas.width; x += 40) {
+                    ctx.beginPath();
+                    ctx.moveTo(x, 0);
+                    ctx.lineTo(x, canvas.height);
+                    ctx.stroke();
+                }
+
+                // Garis horizontal
+                for (let y = 0; y <= canvas.height; y += 40) {
+                    ctx.beginPath();
+                    ctx.moveTo(0, y);
+                    ctx.lineTo(canvas.width, y);
+                    ctx.stroke();
+                }
+
+                // Sumbu X dan Y
+                ctx.strokeStyle = '#9ca3af';
+                ctx.lineWidth = 2;
+                ctx.beginPath();
+                ctx.moveTo(0, centerY);
+                ctx.lineTo(canvas.width, centerY);
+                ctx.stroke();
+
+                ctx.beginPath();
+                ctx.moveTo(centerX, 0);
+                ctx.lineTo(centerX, canvas.height);
+                ctx.stroke();
+
+                // Label sumbu
+                ctx.fillStyle = '#6b7280';
+                ctx.font = '14px Arial';
+                ctx.fillText('X', canvas.width - 20, centerY - 10);
+                ctx.fillText('Y', centerX + 10, 20);
+            }
+
+            // Fungsi untuk membuat bentuk
+            function createShape() {
+                state.originalShape = [];
+
+                switch (state.shape) {
+                    case 'triangle':
+                        // Segitiga
+                        state.originalShape = [
+                            { x: -20, y: -20 },
+                            { x: 20, y: -20 },
+                            { x: 0, y: 20 }
+                        ];
+                        break;
+
+                    case 'rectangle':
+                        // Persegi panjang
+                        state.originalShape = [
+                            { x: -20, y: -15 },
+                            { x: 20, y: -15 },
+                            { x: 20, y: 15 },
+                            { x: -20, y: 15 }
+                        ];
+                        break;
+
+                    case 'pentagon':
+                        // Pentagon
+                        state.originalShape = [];
+                        for (let i = 0; i < 5; i++) {
+                            const angle = (i * 2 * Math.PI / 5) + Math.PI / 2;
+                            state.originalShape.push({
+                                x: 20 * Math.cos(angle),
+                                y: 20 * Math.sin(angle)
+                            });
+                        }
+                        break;
+
+                    case 'custom':
+                        // Bentuk kustom (default: segitiga)
+                        state.originalShape = [
+                            { x: -20, y: -20 },
+                            { x: 20, y: -20 },
+                            { x: 0, y: 20 }
+                        ];
+                        break;
+                }
+
+                // Setel bentuk hasil transformasi ke bentuk asli
+                state.transformedShape = JSON.parse(JSON.stringify(state.originalShape));
+
+                // Hitung titik pivot
+                calculatePivot();
+
+                // Gambar ulang
+                drawScene();
+            }
+
+            // Fungsi untuk menghitung titik pivot
+            function calculatePivot() {
+                if (state.pivotType === 'centroid') {
+                    // Hitung centroid (titik pusat)
+                    let sumX = 0;
+                    let sumY = 0;
+
+                    for (const point of state.originalShape) {
+                        sumX += point.x;
+                        sumY += point.y;
+                    }
+
+                    state.pivotPoint = {
+                        x: sumX / state.originalShape.length,
+                        y: sumY / state.originalShape.length
+                    };
+                } else if (state.pivotType === 'origin') {
+                    // Origin (0,0)
+                    state.pivotPoint = { x: 0, y: 0 };
+                } else {
+                    // Kustom (gunakan nilai terakhir)
+                    state.pivotPoint = { ...state.customPivot };
+                }
+            }
+
+            // Fungsi untuk menerapkan translasi
+            function applyTranslation() {
+                state.transformedShape = [];
+
+                for (const point of state.originalShape) {
+                    state.transformedShape.push({
+                        x: point.x + state.tx,
+                        y: point.y + state.ty
+                    });
+                }
+
+                drawScene();
+            }
+
+            // Fungsi untuk menerapkan rotasi
+            function applyRotation() {
+                state.transformedShape = [];
+                const theta = state.rotationAngle * Math.PI / 180;
+                const cosTheta = Math.cos(theta);
+                const sinTheta = Math.sin(theta);
+
+                for (const point of state.originalShape) {
+                    // Hitung posisi relatif terhadap pivot
+                    const relX = point.x - state.pivotPoint.x;
+                    const relY = point.y - state.pivotPoint.y;
+
+                    // Terapkan rotasi
+                    const rotatedX = relX * cosTheta - relY * sinTheta;
+                    const rotatedY = relX * sinTheta + relY * cosTheta;
+
+                    // Kembalikan ke posisi absolut
+                    state.transformedShape.push({
+                        x: state.pivotPoint.x + rotatedX,
+                        y: state.pivotPoint.y + rotatedY
+                    });
+                }
+
+                drawScene();
+            }
+
+            // Fungsi untuk menggambar seluruh scene
+            function drawScene() {
+                // Bersihkan canvas
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+                // Gambar grid
+                drawGrid();
+
+                // Gambar bentuk asli
+                drawShape(state.originalShape, '#2563eb');
+
+                // Gambar bentuk hasil transformasi
+                drawShape(state.transformedShape, '#ec4899');
+
+                // Gambar titik pivot
+                drawPivot();
+            }
+
+            // Fungsi untuk menggambar bentuk
+            function drawShape(shape, color) {
+                if (shape.length < 2) return;
+
+                // Gambar garis bentuk
+                ctx.strokeStyle = color;
+                ctx.lineWidth = 2;
+                ctx.beginPath();
+
+                // Pindah ke titik pertama
+                const firstPoint = shape[0];
+                ctx.moveTo(centerX + firstPoint.x * scale, centerY - firstPoint.y * scale);
+
+                // Gambar garis ke titik lainnya
+                for (let i = 1; i < shape.length; i++) {
+                    const point = shape[i];
+                    ctx.lineTo(centerX + point.x * scale, centerY - point.y * scale);
+                }
+
+                // Tutup bentuk jika memiliki lebih dari 2 titik
+                if (shape.length > 2) {
+                    ctx.closePath();
+                }
+
+                ctx.stroke();
+
+                // Gambar titik
+                ctx.fillStyle = color;
+                for (const point of shape) {
+                    ctx.beginPath();
+                    ctx.arc(centerX + point.x * scale, centerY - point.y * scale, 4, 0, Math.PI * 2);
+                    ctx.fill();
+                }
+            }
+
+            // Fungsi untuk menggambar titik pivot
+            function drawPivot() {
+                ctx.fillStyle = '#10b981';
+                ctx.beginPath();
+                ctx.arc(centerX + state.pivotPoint.x * scale, centerY - state.pivotPoint.y * scale, 6, 0, Math.PI * 2);
+                ctx.fill();
+
+                // Label pivot
+                ctx.fillStyle = '#10b981';
+                ctx.font = '14px Arial';
+                ctx.fillText('Pivot', centerX + state.pivotPoint.x * scale + 10, centerY - state.pivotPoint.y * scale - 10);
+            }
+
+            // Event listeners
+            document.getElementById('shapeType').addEventListener('change', function () {
+                state.shape = this.value;
+                createShape();
+            });
+
+            document.getElementById('resetShape').addEventListener('click', createShape);
+
+            document.getElementById('tx').addEventListener('input', function () {
+                state.tx = parseInt(this.value);
+                document.getElementById('txValue').textContent = state.tx;
+            });
+
+            document.getElementById('ty').addEventListener('input', function () {
+                state.ty = parseInt(this.value);
+                document.getElementById('tyValue').textContent = state.ty;
+            });
+
+            document.getElementById('applyTranslation').addEventListener('click', applyTranslation);
+            document.getElementById('resetTranslation').addEventListener('click', function () {
+                state.tx = 0;
+                state.ty = 0;
+                document.getElementById('tx').value = 0;
+                document.getElementById('ty').value = 0;
+                document.getElementById('txValue').textContent = '0';
+                document.getElementById('tyValue').textContent = '0';
+                state.transformedShape = JSON.parse(JSON.stringify(state.originalShape));
+                drawScene();
+            });
+
+            document.getElementById('rotationAngle').addEventListener('input', function () {
+                state.rotationAngle = parseInt(this.value);
+                document.getElementById('rotationAngleValue').textContent = state.rotationAngle + '°';
+            });
+
+            document.getElementById('pivotType').addEventListener('change', function () {
+                state.pivotType = this.value;
+                calculatePivot();
+                drawScene();
+            });
+
+            document.getElementById('applyRotation').addEventListener('click', applyRotation);
+            document.getElementById('resetRotation').addEventListener('click', function () {
+                state.rotationAngle = 0;
+                document.getElementById('rotationAngle').value = 0;
+                document.getElementById('rotationAngleValue').textContent = '0°';
+                state.transformedShape = JSON.parse(JSON.stringify(state.originalShape));
+                drawScene();
+            });
+
+            document.getElementById('exampleTranslation').addEventListener('click', function () {
+                // Contoh translasi
+                state.shape = 'triangle';
+                document.getElementById('shapeType').value = 'triangle';
+                state.originalShape = [
+                    { x: 10, y: 10 },
+                    { x: 30, y: 10 },
+                    { x: 10, y: 30 }
+                ];
+
+                state.tx = 10;
+                state.ty = 20;
+                document.getElementById('tx').value = 10;
+                document.getElementById('ty').value = 20;
+                document.getElementById('txValue').textContent = '10';
+                document.getElementById('tyValue').textContent = '20';
+
+                applyTranslation();
+            });
+
+            document.getElementById('exampleRotation').addEventListener('click', function () {
+                // Contoh rotasi
+                state.shape = 'triangle';
+                document.getElementById('shapeType').value = 'triangle';
+                state.originalShape = [
+                    { x: 10, y: 10 },
+                    { x: 30, y: 10 },
+                    { x: 10, y: 30 }
+                ];
+
+                state.pivotType = 'custom';
+                document.getElementById('pivotType').value = 'custom';
+                state.customPivot = { x: 10, y: 10 };
+                state.pivotPoint = { x: 10, y: 10 };
+
+                state.rotationAngle = 30;
+                document.getElementById('rotationAngle').value = 30;
+                document.getElementById('rotationAngleValue').textContent = '30°';
+
+                applyRotation();
+            });
+
+            // Inisialisasi
+            createShape();
+        });
+    </script>
+
+    <!-- My JavaScript -->
+    <script src="js/script.js"></script>
+</body>
+
+</html>

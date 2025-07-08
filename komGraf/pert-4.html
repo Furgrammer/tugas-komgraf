@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Komputer Grafik</title>
+
+    <!-- My Style -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Feather Icons -->
+    <script src="https://unpkg.com/feather-icons"></script>
+</head>
+
+<body>
+
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo"><a href="index.html">Komputer<span>Grafik</span></a></div>
+                <div class="line"></div>
+                <button onclick="toggleSidebar()" class="toggle-button" id="toggle-button"><i
+                        data-feather="chevrons-right"></i></button>
+            </nav>
+        </div>
+    </header>
+
+    <aside class="sidebar" id="sidebar">
+        <ul class="sidebar-menu">
+            <!-- <button onclick=closeSidebar() id="close-btn"><i data-feather="x"></i></button> -->
+            <h3 class="logo"><a href="index.html">DAFTAR ISI</a></h1>
+
+                <li class="sidebar-item">
+                    <a href="pert-1.html">
+                        <i data-feather="book"></i>
+                        <span>Pertemuan 1</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="pert-2.html">
+                        <i data-feather="book"></i>
+                        <span>Pertemuan 2</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="pert-3.html">
+                        <i data-feather="book"></i>
+                        <span>Pertemuan 3</span>
+                    </a>
+                </li>
+                <li class="sidebar-item active">
+                    <a href="pert-4.html">
+                        <i data-feather="book"></i>
+                        <span>Pertemuan 4</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="pert-5.html">
+                        <i data-feather="book"></i>
+                        <span>Pertemuan 5</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="pert-6.html">
+                        <i data-feather="book"></i>
+                        <span>Pertemuan 6</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="pert-7.html">
+                        <i data-feather="book"></i>
+                        <span>Pertemuan 7</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="pert-8.html">
+                        <i data-feather="book"></i>
+                        <span>Pertemuan 8</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="pert-9.html">
+                        <i data-feather="book"></i>
+                        <span>Pertemuan 9</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="pert-10.html">
+                        <i data-feather="book"></i>
+                        <span>Pertemuan 10</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="pert-11.html">
+                        <i data-feather="book"></i>
+                        <span>Pertemuan 11</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="pert-12.html">
+                        <i data-feather="book"></i>
+                        <span>Pertemuan 12</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="pert-13.html">
+                        <i data-feather="book"></i>
+                        <span>Pertemuan 13</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="pert-14.html">
+                        <i data-feather="book"></i>
+                        <span>Pertemuan 14</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="tugas-dashboard.html">
+                        <i data-feather="book-open"></i>
+                        <span>Tugas Dashboard</span>
+                    </a>
+                </li>
+        </ul>
+    </aside>
+
+    <main>
+        <section id="pert-4" class="section">
+            <header>
+                <h1>Pertemuan 04 - Algoritma Lingkaran dan Elips</h1>
+            </header>
+
+            <div class="algo-info">
+                <div>
+                    <h3>Algoritma Lingkaran (Midpoint)</h3>
+                    <p>Algoritma Midpoint untuk lingkaran menggunakan pendekatan incremental untuk menggambar lingkaran
+                        dengan efisien.</p>
+                    <div class="algo-steps">
+                        <p><strong>Langkah-langkah:</strong></p>
+                        <ol>
+                            <li>Masukkan titik pusat (xc, yc) dan jari-jari r</li>
+                            <li>Hitung nilai awal: x = 0, y = r, p = 1 - r</li>
+                            <li>Gambar titik simetris di 8 oktan</li>
+                            <li>Selama x ≤ y:
+                                <ul>
+                                    <li>Jika p < 0: p=p + 2x + 3</li>
+                                    <li>Jika p ≥ 0: p = p + 2(x - y) + 5, y--</li>
+                                    <li>x++</li>
+                                    <li>Gambar titik di posisi baru</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+
+                <div>
+                    <h3>Algoritma Elips (Midpoint)</h3>
+                    <p>Algoritma Midpoint untuk elips membagi proses menjadi dua region dengan perhitungan berbeda.</p>
+                    <div class="algo-steps">
+                        <p><strong>Langkah-langkah:</strong></p>
+                        <ol>
+                            <li>Masukkan titik pusat (xc, yc), rx (sumbu x), ry (sumbu y)</li>
+                            <li><strong>Region 1:</strong>
+                                <ul>
+                                    <li>Mulai dari (0, ry)</li>
+                                    <li>Hitung p1 = ry² - rx²ry + rx²/4</li>
+                                    <li>Gambar titik simetris di 4 kuadran</li>
+                                    <li>Ulangi selama 2ry²x < 2rx²y</li>
+                                </ul>
+                            </li>
+                            <li><strong>Region 2:</strong>
+                                <ul>
+                                    <li>Hitung p2 = ry²(x+0.5)² + rx²(y-1)² - rx²ry²</li>
+                                    <li>Gambar titik simetris di 4 kuadran</li>
+                                    <li>Ulangi sementara y ≥ 0</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2>Algoritma Lingkaran (Midpoint Circle Algorithm)</h2>
+                <p>Algoritma untuk menggambar lingkaran menggunakan pendekatan midpoint dengan optimasi perhitungan
+                    integer.</p>
+
+                <div class="input-group">
+                    <label>Masukkan Parameter Lingkaran:</label>
+                    <div>
+                        <label>Titik Pusat (x,y):
+                            <input type="number" id="circleX" value="0" placeholder="x">
+                            <input type="number" id="circleY" value="0" placeholder="y">
+                        </label>
+                        <label>Jari-jari (r):
+                            <input type="number" id="circleR" value="8" min="1" placeholder="r">
+                        </label>
+                    </div>
+                    <div class="center">
+                        <button class="btn" id="drawCircleBtn">Gambar Lingkaran</button>
+                        <span class="point circle-point"></span> Titik lingkaran
+                    </div>
+                </div>
+
+                <div class="grid">
+                    <div>
+                        <div class="visualization">
+                            <h3>Visualisasi Lingkaran</h3>
+                            <div class="canvas-container">
+                                <canvas id="circleCanvas" width="400" height="400"></canvas>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="table-container">
+                            <h3>Perhitungan Langkah demi Langkah</h3>
+                            <table id="circleCalculationTable">
+                                <thead>
+                                    <tr>
+                                        <th>Iterasi</th>
+                                        <th>x</th>
+                                        <th>y</th>
+                                        <th>Pk</th>
+                                        <th>Keputusan</th>
+                                        <th>Titik Simetris</th>
+                                    </tr>
+                                </thead>
+                                <tbody></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2>Algoritma Elips (Midpoint Ellipse Algorithm)</h2>
+                <p>Algoritma untuk menggambar elips menggunakan pendekatan midpoint.</p>
+
+                <div class="input-group">
+                    <label>Masukkan Parameter Elips:</label>
+                    <div>
+                        <label>Titik Pusat (x,y):
+                            <input type="number" id="ellipseX" value="0" placeholder="x">
+                            <input type="number" id="ellipseY" value="0" placeholder="y">
+                        </label>
+                        <label>Radius X (rx):
+                            <input type="number" id="ellipseRx" value="10" min="1" placeholder="rx">
+                        </label>
+                        <label>Radius Y (ry):
+                            <input type="number" id="ellipseRy" value="6" min="1" placeholder="ry">
+                        </label>
+                    </div>
+                    <div class="center">
+                        <button class="btn" id="drawEllipseBtn">Gambar Elips</button>
+                        <span class="point ellipse-point"></span> Titik elips
+                    </div>
+                </div>
+
+                <div class="grid">
+                    <div>
+                        <div class="visualization">
+                            <h3>Visualisasi Elips</h3>
+                            <div class="canvas-container">
+                                <canvas id="ellipseCanvas" width="400" height="400"></canvas>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="table-container">
+                            <h3>Perhitungan Langkah demi Langkah</h3>
+                            <table id="ellipseCalculationTable">
+                                <thead>
+                                    <tr>
+                                        <th>Region</th>
+                                        <th>x</th>
+                                        <th>y</th>
+                                        <th>Parameter</th>
+                                        <th>Keputusan</th>
+                                        <th>Titik Simetris</th>
+                                    </tr>
+                                </thead>
+                                <tbody></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="explanation">
+                <h3>Penjelasan Algoritma</h3>
+                <p>Algoritma Midpoint untuk lingkaran dan elips adalah pendekatan efisien dalam menggambar kurva dengan
+                    hanya menggunakan operasi integer. Kedua algoritma memanfaatkan simetri untuk mengurangi
+                    perhitungan:</p>
+                <ul>
+                    <li><strong>Lingkaran:</strong> Memiliki 8 simetri sehingga hanya perlu menghitung 1/8 bagian
+                        lingkaran</li>
+                    <li><strong>Elips:</strong> Memiliki 4 simetri sehingga hanya perlu menghitung 1/4 bagian elips</li>
+                </ul>
+                <p>Kedua algoritma menggunakan pendekatan incremental untuk menentukan titik berikutnya berdasarkan
+                    nilai parameter keputusan (Pk).</p>
+            </div>
+
+            <footer>
+                <p>Materi Komputer Grafik - Pertemuan 4: Algoritma Lingkaran dan Elips</p>
+                <p>Universitas Pamulang - Teknik Informatika S1</p>
+            </footer>
+        </section>
+    </main>
+
+
+    <script>
+        feather.replace();
+
+        // Canvas elements
+        const circleCanvas = document.getElementById("circleCanvas");
+        const ellipseCanvas = document.getElementById("ellipseCanvas");
+        const circleCtx = circleCanvas.getContext("2d");
+        const ellipseCtx = ellipseCanvas.getContext("2d");
+
+        // UI elements
+        const drawCircleBtn = document.getElementById("drawCircleBtn");
+        const drawEllipseBtn = document.getElementById("drawEllipseBtn");
+        const circleTableBody = document.querySelector("#circleCalculationTable tbody");
+        const ellipseTableBody = document.querySelector("#ellipseCalculationTable tbody");
+
+        // Initialize canvas
+        function initCircleCanvas() {
+            circleCtx.clearRect(0, 0, circleCanvas.width, circleCanvas.height);
+            drawGrid(circleCtx, circleCanvas.width, circleCanvas.height);
+        }
+
+        function initEllipseCanvas() {
+            ellipseCtx.clearRect(0, 0, ellipseCanvas.width, ellipseCanvas.height);
+            drawGrid(ellipseCtx, ellipseCanvas.width, ellipseCanvas.height);
+        }
+
+        // Draw grid function
+        function drawGrid(ctx, width, height) {
+            ctx.strokeStyle = "#e5e7eb";
+            ctx.lineWidth = 1;
+
+            // Draw vertical lines
+            for (let x = 0; x <= width; x += 20) {
+                ctx.beginPath();
+                ctx.moveTo(x, 0);
+                ctx.lineTo(x, height);
+                ctx.stroke();
+            }
+
+            // Draw horizontal lines
+            for (let y = 0; y <= height; y += 20) {
+                ctx.beginPath();
+                ctx.moveTo(0, y);
+                ctx.lineTo(width, y);
+                ctx.stroke();
+            }
+
+            // Draw axes
+            ctx.strokeStyle = "#9ca3af";
+            ctx.lineWidth = 2;
+            ctx.beginPath();
+            ctx.moveTo(0, height / 2);
+            ctx.lineTo(width, height / 2);
+            ctx.stroke();
+
+            ctx.beginPath();
+            ctx.moveTo(width / 2, 0);
+            ctx.lineTo(width / 2, height);
+            ctx.stroke();
+
+            // Draw axis labels
+            ctx.fillStyle = "#4b5563";
+            ctx.font = "12px Arial";
+            ctx.textAlign = "center";
+            ctx.fillText("x", width - 10, height / 2 - 10);
+            ctx.fillText("y", width / 2 + 10, 15);
+        }
+
+        // Draw point function
+        function drawPoint(ctx, x, y, color = "#ef4444", size = 5) {
+            ctx.fillStyle = color;
+            ctx.beginPath();
+            ctx.arc(x, y, size, 0, Math.PI * 2);
+            ctx.fill();
+        }
+
+        // Convert coordinate system (cartesian to canvas)
+        function toCanvasCoords(x, y, canvas) {
+            const centerX = canvas.width / 2;
+            const centerY = canvas.height / 2;
+            return {
+                x: centerX + x * 20,
+                y: centerY - y * 20
+            };
+        }
+
+        // Midpoint Circle Algorithm
+        function drawCircleWithAlgorithm() {
+            // Clear previous results
+            circleTableBody.innerHTML = "";
+            initCircleCanvas();
+
+            // Get input values
+            const xc = parseInt(document.getElementById("circleX").value);
+            const yc = parseInt(document.getElementById("circleY").value);
+            const r = parseInt(document.getElementById("circleR").value);
+
+            // Initial values
+            let x = 0;
+            let y = r;
+            let p = 1 - r;
+
+            // Draw initial points
+            drawCirclePoints(circleCtx, xc, yc, x, y);
+
+            // Add initial calculation to table
+            addCircleCalculation(0, x, y, p, "Initial point", xc, yc);
+
+            let iteration = 1;
+            while (x < y) {
+                x++;
+
+                if (p < 0) {
+                    p += 2 * x + 1;
+                    drawCirclePoints(circleCtx, xc, yc, x, y);
+                    addCircleCalculation(iteration, x, y, p, "Pk < 0 → (x+1, y)", xc, yc);
+                } else {
+                    y--;
+                    p += 2 * (x - y) + 1;
+                    drawCirclePoints(circleCtx, xc, yc, x, y);
+                    addCircleCalculation(iteration, x, y, p, "Pk >= 0 → (x+1, y-1)", xc, yc);
+                }
+
+                iteration++;
+            }
+        }
+
+        // Draw circle points (8-way symmetry)
+        function drawCirclePoints(ctx, xc, yc, x, y) {
+            const points = [
+                [x, y], [-x, y], [x, -y], [-x, -y],
+                [y, x], [-y, x], [y, -x], [-y, -x]
+            ];
+
+            points.forEach(point => {
+                const canvasPoint = toCanvasCoords(
+                    point[0] + xc,
+                    point[1] + yc,
+                    circleCanvas
+                );
+                drawPoint(ctx, canvasPoint.x, canvasPoint.y, "#2563eb");
+            });
+        }
+
+        // Add circle calculation to table
+        function addCircleCalculation(iteration, x, y, p, decision, xc, yc) {
+            const points = [
+                [x, y], [-x, y], [x, -y], [-x, -y],
+                [y, x], [-y, x], [y, -x], [-y, -x]
+            ];
+
+            const transformedPoints = points.map(point => {
+                return `(${point[0] + xc}, ${point[1] + yc})`;
+            }).join(', ');
+
+            const tr = document.createElement("tr");
+            tr.innerHTML = `
+                <td>${iteration}</td>
+                <td>${x}</td>
+                <td>${y}</td>
+                <td>${p}</td>
+                <td>${decision}</td>
+                <td>${transformedPoints}</td>
+            `;
+            circleTableBody.appendChild(tr);
+        }
+
+        // Midpoint Ellipse Algorithm
+        function drawEllipseWithAlgorithm() {
+            // Clear previous results
+            ellipseTableBody.innerHTML = "";
+            initEllipseCanvas();
+
+            // Get input values
+            const xc = parseInt(document.getElementById("ellipseX").value);
+            const yc = parseInt(document.getElementById("ellipseY").value);
+            const rx = parseInt(document.getElementById("ellipseRx").value);
+            const ry = parseInt(document.getElementById("ellipseRy").value);
+
+            // Region 1
+            let x = 0;
+            let y = ry;
+            let p1 = Math.pow(ry, 2) - Math.pow(rx, 2) * ry + 0.25 * Math.pow(rx, 2);
+            let region = "Region 1";
+
+            // Add initial point to table
+            addEllipseCalculation(region, x, y, p1, "Initial point", xc, yc);
+            drawEllipsePoints(ellipseCtx, xc, yc, x, y);
+
+            // Counter for iterations
+            let iteration = 1;
+
+            // Region 1 loop
+            while (2 * Math.pow(ry, 2) * x < 2 * Math.pow(rx, 2) * y) {
+                x++;
+
+                if (p1 < 0) {
+                    p1 += 2 * Math.pow(ry, 2) * x + Math.pow(ry, 2);
+                    drawEllipsePoints(ellipseCtx, xc, yc, x, y);
+                    addEllipseCalculation(region, x, y, p1, "P1k < 0 → (x+1, y)", xc, yc);
+                } else {
+                    y--;
+                    p1 += 2 * Math.pow(ry, 2) * x - 2 * Math.pow(rx, 2) * y + Math.pow(ry, 2);
+                    drawEllipsePoints(ellipseCtx, xc, yc, x, y);
+                    addEllipseCalculation(region, x, y, p1, "P1k >= 0 → (x+1, y-1)", xc, yc);
+                }
+
+                iteration++;
+            }
+
+            // Region 2
+            region = "Region 2";
+            let p2 = Math.pow(ry, 2) * Math.pow(x + 0.5, 2) +
+                Math.pow(rx, 2) * Math.pow(y - 1, 2) -
+                Math.pow(rx, 2) * Math.pow(ry, 2);
+
+            // Add first point of region 2 to table
+            addEllipseCalculation(region, x, y, p2, "Initial point", xc, yc);
+
+            // Region 2 loop
+            while (y >= 0) {
+                y--;
+
+                if (p2 > 0) {
+                    p2 += Math.pow(rx, 2) - 2 * Math.pow(rx, 2) * y;
+                    drawEllipsePoints(ellipseCtx, xc, yc, x, y);
+                    addEllipseCalculation(region, x, y, p2, "P2k > 0 → (x, y-1)", xc, yc);
+                } else {
+                    x++;
+                    p2 += 2 * Math.pow(ry, 2) * x - 2 * Math.pow(rx, 2) * y + Math.pow(rx, 2);
+                    drawEllipsePoints(ellipseCtx, xc, yc, x, y);
+                    addEllipseCalculation(region, x, y, p2, "P2k <= 0 → (x+1, y-1)", xc, yc);
+                }
+
+                iteration++;
+            }
+        }
+
+        // Draw ellipse points (4-way symmetry)
+        function drawEllipsePoints(ctx, xc, yc, x, y) {
+            const points = [
+                [x, y], [-x, y], [x, -y], [-x, -y]
+            ];
+
+            points.forEach(point => {
+                const canvasPoint = toCanvasCoords(
+                    point[0] + xc,
+                    point[1] + yc,
+                    ellipseCanvas
+                );
+                drawPoint(ctx, canvasPoint.x, canvasPoint.y, "#ec4899");
+            });
+        }
+
+        // Add ellipse calculation to table
+        function addEllipseCalculation(region, x, y, p, decision, xc, yc) {
+            const points = [
+                [x, y], [-x, y], [x, -y], [-x, -y]
+            ];
+
+            const transformedPoints = points.map(point => {
+                return `(${point[0] + xc}, ${point[1] + yc})`;
+            }).join(', ');
+
+            const tr = document.createElement("tr");
+            tr.innerHTML = `
+                <td>${region}</td>
+                <td>${x}</td>
+                <td>${y}</td>
+                <td>${p.toFixed(2)}</td>
+                <td>${decision}</td>
+                <td>${transformedPoints}</td>
+            `;
+            ellipseTableBody.appendChild(tr);
+        }
+
+        // Event listeners
+        drawCircleBtn.addEventListener("click", drawCircleWithAlgorithm);
+        drawEllipseBtn.addEventListener("click", drawEllipseWithAlgorithm);
+
+        // Initialize on load
+        window.addEventListener('load', () => {
+            initCircleCanvas();
+            initEllipseCanvas();
+
+            // Draw examples initially
+            setTimeout(() => {
+                drawCircleWithAlgorithm();
+                drawEllipseWithAlgorithm();
+            }, 500);
+        });
+    </script>
+
+    <!-- My JavaScript -->
+    <script src="js/script.js"></script>
+</body>
+
+</html>
