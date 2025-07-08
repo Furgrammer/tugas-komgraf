@@ -16,8 +16,8 @@ Sebenarnya aku bikin repository ini karena ikutin temen aja sih (FOMO).
 ## Struktur File/Project
 Awalnya aku bikin project ini cuma menggunakan 1 file html (index.html), tapi javascriptnya suka error dan aku gabisa fix errornya. Jadi, ku pisah menjadi beberapa file dan hasil/struktur dari filenya seperti ini:
 ```bash
-komgraf/
-├── script/                            # Kode javascript
+komGraf/
+├── js/                            # Kode javascript
 │   ├── script.js  
 ├── css/                               # Kode css 
 │   ├── style.css  
