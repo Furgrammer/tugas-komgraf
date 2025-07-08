@@ -1,4 +1,4 @@
-# [Tugas mengimplementasikan algoritma/materi pada Modul] - [Komputer Grafik]
+# [Tugas Mengimplementasikan Materi Pada Modul] - [Komputer Grafik]
 
 ![Badge](https://img.shields.io/badge/Status-Selesai-green)  ![Badge](https://img.shields.io/badge/Bahasa-HTML--CSS--Javascript-blue)
 
