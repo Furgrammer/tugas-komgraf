@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Komputer Grafik</title>
+
+    <!-- My Style -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Feather Icons -->
+    <script src="https://unpkg.com/feather-icons"></script>
+</head>
+
+<body>
+
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo"><a href="index.html">Komputer<span>Grafik</span></a></div>
+                <div class="line"></div>
+                <button onclick="toggleSidebar()" class="toggle-button" id="toggle-button"><i
+                        data-feather="chevrons-right"></i></button>
+            </nav>
+        </div>
+    </header>
+
+    <aside class="sidebar" id="sidebar">
+        <ul class="sidebar-menu">
+            <!-- <button onclick=closeSidebar() id="close-btn"><i data-feather="x"></i></button> -->
+            <h3 class="logo"><a href="index.html">DAFTAR ISI</a></h1>
+
+                <li class="sidebar-item">
+                    <a href="pert-1.html">
+                        <i data-feather="book"></i>
+                        <span>Pertemuan 1</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="pert-2.html">
+                        <i data-feather="book"></i>
+                        <span>Pertemuan 2</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="pert-3.html">
+                        <i data-feather="book"></i>
+                        <span>Pertemuan 3</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="pert-4.html">
+                        <i data-feather="book"></i>
+                        <span>Pertemuan 4</span>
+                    </a>
+                </li>
+                <li class="sidebar-item active">
+                    <a href="pert-5.html">
+                        <i data-feather="book"></i>
+                        <span>Pertemuan 5</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="pert-6.html">
+                        <i data-feather="book"></i>
+                        <span>Pertemuan 6</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="pert-7.html">
+                        <i data-feather="book"></i>
+                        <span>Pertemuan 7</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="pert-8.html">
+                        <i data-feather="book"></i>
+                        <span>Pertemuan 8</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="pert-9.html">
+                        <i data-feather="book"></i>
+                        <span>Pertemuan 9</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="pert-10.html">
+                        <i data-feather="book"></i>
+                        <span>Pertemuan 10</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="pert-11.html">
+                        <i data-feather="book"></i>
+                        <span>Pertemuan 11</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="pert-12.html">
+                        <i data-feather="book"></i>
+                        <span>Pertemuan 12</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="pert-13.html">
+                        <i data-feather="book"></i>
+                        <span>Pertemuan 13</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="pert-14.html">
+                        <i data-feather="book"></i>
+                        <span>Pertemuan 14</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="tugas-dashboard.html">
+                        <i data-feather="book-open"></i>
+                        <span>Tugas Dashboard</span>
+                    </a>
+                </li>
+        </ul>
+    </aside>
+
+    <main>
+        <section id="pert-5" class="section">
+            <header>
+                <h1>Pertemuan 05 - Algoritma Pembuatan Kurva Bezier</h1>
+            </header>
+
+            <div class="content">
+                <div class="panel">
+                    <h2>Kontrol Kurva Bezier</h2>
+
+                    <div class="point-controls">
+                        <div class="point-control">
+                            <div class="input-group">
+                                <label>Titik Kontrol 1 (P0)</label>
+                                <input type="number" id="x0" value="50" placeholder="X">
+                                <input type="number" id="y0" value="300" placeholder="Y">
+                            </div>
+
+                            <div class="input-group">
+                                <label>Titik Kontrol 2 (P1)</label>
+                                <input type="number" id="x1" value="150" placeholder="X">
+                                <input type="number" id="y1" value="100" placeholder="Y">
+                            </div>
+                        </div>
+
+                        <div class="point-control">
+                            <div class="input-group">
+                                <label>Titik Kontrol 3 (P2)</label>
+                                <input type="number" id="x2" value="300" placeholder="X">
+                                <input type="number" id="y2" value="100" placeholder="Y">
+                            </div>
+
+                            <div class="input-group">
+                                <label>Titik Kontrol 4 (P3)</label>
+                                <input type="number" id="x3" value="400" placeholder="X">
+                                <input type="number" id="y3" value="300" placeholder="Y">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="input-group">
+                        <label>Langkah (Δt): <span class="slider-value" id="dtValue">0.05</span></label>
+                        <input type="range" id="dt" min="0.01" max="0.2" step="0.01" value="0.05">
+                    </div>
+
+                    <button class="btn" onclick="hitungKurva()">Hitung & Gambar Kurva</button>
+                    <button class="btn btn-reset" onclick="resetInput()">Reset ke Default</button>
+                </div>
+
+                <div class="panel">
+                    <h2>Visualisasi Kurva Bezier</h2>
+                    <div class="canvas-container">
+                        <canvas id="bezierCanvas" width="600" height="400"></canvas>
+                    </div>
+
+                    <div class="legend">
+                        <div class="legend-item">
+                            <div class="legend-color control-point"></div>
+                            <span>Titik Kontrol</span>
+                        </div>
+                        <div class="legend-item">
+                            <div class="legend-color control-line"></div>
+                            <span>Garis Kontrol</span>
+                        </div>
+                        <div class="legend-item">
+                            <div class="legend-color bezier-curve"></div>
+                            <span>Kurva Bezier</span>
+                        </div>
+                        <div class="legend-item">
+                            <div class="legend-color bezier-point"></div>
+                            <span>Titik pada Kurva</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="output">
+                <h2>Hasil Perhitungan</h2>
+                <p><strong>Jumlah titik pada kurva: </strong><span id="jumlahTitik">0</span></p>
+
+                <div class="formula">
+                    <strong>Rumus Bezier untuk 4 titik kontrol:</strong><br>
+                    B(t) = (1−t)³ × P₀ + 3(1−t)² × t × P₁ + 3(1−t) × t² × P₂ + t³ × P₃
+                </div>
+
+                <table id="tabelHasil">
+                    <thead>
+                        <tr>
+                            <th>t</th>
+                            <th>X(t)</th>
+                            <th>Y(t)</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+
+            <div class="explanation">
+                <h3>Penjelasan Algoritma Bezier</h3>
+                <p>Kurva Bezier adalah kurva parametrik yang digunakan dalam grafik komputer. Kurva ini didefinisikan
+                    oleh titik
+                    kontrol:</p>
+                <ul>
+                    <li>P0 dan P3 adalah titik awal dan akhir</li>
+                    <li>P1 dan P2 adalah titik kontrol yang menentukan bentuk kurva</li>
+                    <li>Parameter <span class="highlight">t</span> bervariasi dari 0 hingga 1</li>
+                    <li><span class="highlight">Δt</span> menentukan jumlah titik yang dihitung (semakin kecil Δt,
+                        semakin halus
+                        kurva)</li>
+                </ul>
+
+                <p>Kurva Bezier memiliki sifat-sifat penting:</p>
+                <ul>
+                    <li>Kurva selalu berada di dalam convex hull dari titik kontrol</li>
+                    <li>Kurva dimulai di P0 dan berakhir di P3</li>
+                    <li>Garis singgung di P0 adalah garis dari P0 ke P1</li>
+                    <li>Garis singgung di P3 adalah garis dari P2 ke P3</li>
+                </ul>
+
+                <div class="formula">
+                    <strong>Contoh perhitungan untuk t = 0.5:</strong><br>
+                    Misal P0 = (50, 300), P1 = (150, 100), P2 = (300, 100), P3 = (400, 300)<br><br>
+
+                    X(0.5) = (1-0.5)³×50 + 3(1-0.5)²×0.5×150 + 3(1-0.5)×(0.5)²×300 + (0.5)³×400<br>
+                    = 0.125×50 + 0.375×150 + 0.375×300 + 0.125×400<br>
+                    = 6.25 + 56.25 + 112.5 + 50 = 225<br><br>
+
+                    Y(0.5) = (1-0.5)³×300 + 3(1-0.5)²×0.5×100 + 3(1-0.5)×(0.5)²×100 + (0.5)³×300<br>
+                    = 0.125×300 + 0.375×100 + 0.375×100 + 0.125×300<br>
+                    = 37.5 + 37.5 + 37.5 + 37.5 = 150<br><br>
+
+                    Jadi titik pada t=0.5 adalah (225, 150)
+                </div>
+
+                <div class="pascal">
+                    <div class="pascal-title">Segitiga Pascal untuk Koefisien Bezier</div>
+                    <div class="pascal-row">
+                        <div class="pascal-number">1</div>
+                    </div>
+                    <div class="pascal-row">
+                        <div class="pascal-number">1</div>
+                        <div class="pascal-number">1</div>
+                    </div>
+                    <div class="pascal-row">
+                        <div class="pascal-number">1</div>
+                        <div class="pascal-number">2</div>
+                        <div class="pascal-number">1</div>
+                    </div>
+                    <div class="pascal-row">
+                        <div class="pascal-number">1</div>
+                        <div class="pascal-number">3</div>
+                        <div class="pascal-number">3</div>
+                        <div class="pascal-number">1</div>
+                    </div>
+                    <div class="pascal-row">
+                        <div class="pascal-number">1</div>
+                        <div class="pascal-number">4</div>
+                        <div class="pascal-number">6</div>
+                        <div class="pascal-number">4</div>
+                        <div class="pascal-number">1</div>
+                    </div>
+                    <div class="pascal-row">
+                        <div class="pascal-number">1</div>
+                        <div class="pascal-number">5</div>
+                        <div class="pascal-number">10</div>
+                        <div class="pascal-number">10</div>
+                        <div class="pascal-number">5</div>
+                        <div class="pascal-number">1</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+
+    <script>
+        feather.replace();
+
+        // Default values for control points
+        const defaultValues = {
+            x0: 50, y0: 300,
+            x1: 150, y1: 100,
+            x2: 300, y2: 100,
+            x3: 400, y3: 300,
+            dt: 0.05
+        };
+
+        // Set up event listeners
+        document.addEventListener('DOMContentLoaded', function () {
+            // Set default values
+            resetInput();
+
+            // Set up slider event
+            document.getElementById('dt').addEventListener('input', function () {
+                document.getElementById('dtValue').textContent = this.value;
+                hitungKurva();
+            });
+
+            // Set up input events
+            document.querySelectorAll('input[type="number"]').forEach(input => {
+                input.addEventListener('input', hitungKurva);
+            });
+        });
+
+        // Reset input to default values
+        function resetInput() {
+            document.getElementById('x0').value = defaultValues.x0;
+            document.getElementById('y0').value = defaultValues.y0;
+            document.getElementById('x1').value = defaultValues.x1;
+            document.getElementById('y1').value = defaultValues.y1;
+            document.getElementById('x2').value = defaultValues.x2;
+            document.getElementById('y2').value = defaultValues.y2;
+            document.getElementById('x3').value = defaultValues.x3;
+            document.getElementById('y3').value = defaultValues.y3;
+            document.getElementById('dt').value = defaultValues.dt;
+            document.getElementById('dtValue').textContent = defaultValues.dt;
+
+            hitungKurva();
+        }
+
+        // Main function to calculate and draw the Bezier curve
+        function hitungKurva() {
+            const canvas = document.getElementById("bezierCanvas");
+            const ctx = canvas.getContext("2d");
+
+            // Clear canvas
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            // Get input values
+            const x0 = parseFloat(document.getElementById("x0").value);
+            const y0 = parseFloat(document.getElementById("y0").value);
+            const x1 = parseFloat(document.getElementById("x1").value);
+            const y1 = parseFloat(document.getElementById("y1").value);
+            const x2 = parseFloat(document.getElementById("x2").value);
+            const y2 = parseFloat(document.getElementById("y2").value);
+            const x3 = parseFloat(document.getElementById("x3").value);
+            const y3 = parseFloat(document.getElementById("y3").value);
+            const dt = parseFloat(document.getElementById("dt").value);
+
+            // Calculate number of points
+            const steps = Math.floor(1 / dt);
+            const totalPoints = steps + 1;
+            document.getElementById("jumlahTitik").textContent = totalPoints;
+
+            // Draw control points
+            ctx.fillStyle = "#4CAF50";
+            drawControlPoint(ctx, x0, y0, "P0");
+            drawControlPoint(ctx, x1, y1, "P1");
+            drawControlPoint(ctx, x2, y2, "P2");
+            drawControlPoint(ctx, x3, y3, "P3");
+
+            // Draw control lines
+            ctx.strokeStyle = "#9C27B0";
+            ctx.setLineDash([5, 3]);
+            ctx.lineWidth = 1;
+            ctx.beginPath();
+            ctx.moveTo(x0, y0);
+            ctx.lineTo(x1, y1);
+            ctx.lineTo(x2, y2);
+            ctx.lineTo(x3, y3);
+            ctx.stroke();
+            ctx.setLineDash([]);
+
+            // Calculate points and draw curve
+            const points = [];
+            ctx.beginPath();
+            ctx.moveTo(x0, y0);
+
+            for (let i = 0; i <= steps; i++) {
+                const t = i * dt;
+                const xt = calculateBezier(t, x0, x1, x2, x3);
+                const yt = calculateBezier(t, y0, y1, y2, y3);
+
+                points.push({ t, x: xt, y: yt });
+                ctx.lineTo(xt, yt);
+            }
+
+            // Draw the curve
+            ctx.strokeStyle = "#2196F3";
+            ctx.lineWidth = 3;
+            ctx.stroke();
+
+            // Draw points on curve
+            ctx.fillStyle = "#FF5722";
+            points.forEach(point => {
+                ctx.beginPath();
+                ctx.arc(point.x, point.y, 3, 0, Math.PI * 2);
+                ctx.fill();
+            });
+
+            // Update results table
+            updateResultsTable(points);
+        }
+
+        // Calculate Bezier point for a given t
+        function calculateBezier(t, p0, p1, p2, p3) {
+            const u = 1 - t;
+            const u2 = u * u;
+            const t2 = t * t;
+
+            return u2 * u * p0 +
+                3 * u2 * t * p1 +
+                3 * u * t2 * p2 +
+                t2 * t * p3;
+        }
+
+        // Draw a control point with label
+        function drawControlPoint(ctx, x, y, label) {
+            // Draw point
+            ctx.beginPath();
+            ctx.arc(x, y, 6, 0, Math.PI * 2);
+            ctx.fill();
+
+            // Draw label
+            ctx.font = "bold 14px Arial";
+            ctx.fillStyle = "#FFF";
+            ctx.textAlign = "center";
+            ctx.fillText(label, x, y - 15);
+        }
+
+        // Update the results table
+        function updateResultsTable(points) {
+            const tbody = document.querySelector("#tabelHasil tbody");
+            tbody.innerHTML = "";
+
+            // Only show a subset of points to avoid performance issues
+            const step = Math.max(1, Math.floor(points.length / 20));
+
+            for (let i = 0; i < points.length; i += step) {
+                const point = points[i];
+                const row = document.createElement("tr");
+
+                row.innerHTML = `
+                    <td>${point.t.toFixed(3)}</td>
+                    <td>${point.x.toFixed(2)}</td>
+                    <td>${point.y.toFixed(2)}</td>
+                `;
+
+                tbody.appendChild(row);
+            }
+
+            // Always show the last point
+            if (points.length > 0) {
+                const lastPoint = points[points.length - 1];
+                const row = document.createElement("tr");
+
+                row.innerHTML = `
+                    <td>${lastPoint.t.toFixed(3)}</td>
+                    <td>${lastPoint.x.toFixed(2)}</td>
+                    <td>${lastPoint.y.toFixed(2)}</td>
+                `;
+
+                tbody.appendChild(row);
+            }
+        }
+    </script>
+
+    <!-- My JavaScript -->
+    <script src="js/script.js"></script>
+</body>
+
+</html>

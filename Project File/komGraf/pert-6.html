@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Komputer Grafik</title>
+
+    <!-- My Style -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Feather Icons -->
+    <script src="https://unpkg.com/feather-icons"></script>
+</head>
+
+<body>
+
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo"><a href="index.html">Komputer<span>Grafik</span></a></div>
+                <div class="line"></div>
+                <button onclick="toggleSidebar()" class="toggle-button" id="toggle-button"><i
+                        data-feather="chevrons-right"></i></button>
+            </nav>
+        </div>
+    </header>
+
+    <aside class="sidebar" id="sidebar">
+        <ul class="sidebar-menu">
+            <!-- <button onclick=closeSidebar() id="close-btn"><i data-feather="x"></i></button> -->
+            <h3 class="logo"><a href="index.html">DAFTAR ISI</a></h1>
+
+                <li class="sidebar-item">
+                    <a href="pert-1.html">
+                        <i data-feather="book"></i>
+                        <span>Pertemuan 1</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="pert-2.html">
+                        <i data-feather="book"></i>
+                        <span>Pertemuan 2</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="pert-3.html">
+                        <i data-feather="book"></i>
+                        <span>Pertemuan 3</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="pert-4.html">
+                        <i data-feather="book"></i>
+                        <span>Pertemuan 4</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="pert-5.html">
+                        <i data-feather="book"></i>
+                        <span>Pertemuan 5</span>
+                    </a>
+                </li>
+                <li class="sidebar-item active">
+                    <a href="pert-6.html">
+                        <i data-feather="book"></i>
+                        <span>Pertemuan 6</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="pert-7.html">
+                        <i data-feather="book"></i>
+                        <span>Pertemuan 7</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="pert-8.html">
+                        <i data-feather="book"></i>
+                        <span>Pertemuan 8</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="pert-9.html">
+                        <i data-feather="book"></i>
+                        <span>Pertemuan 9</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="pert-10.html">
+                        <i data-feather="book"></i>
+                        <span>Pertemuan 10</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="pert-11.html">
+                        <i data-feather="book"></i>
+                        <span>Pertemuan 11</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="pert-12.html">
+                        <i data-feather="book"></i>
+                        <span>Pertemuan 12</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="pert-13.html">
+                        <i data-feather="book"></i>
+                        <span>Pertemuan 13</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="pert-14.html">
+                        <i data-feather="book"></i>
+                        <span>Pertemuan 14</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="tugas-dashboard.html">
+                        <i data-feather="book-open"></i>
+                        <span>Tugas Dashboard</span>
+                    </a>
+                </li>
+        </ul>
+    </aside>
+
+    <main>
+        <section id="pert-6" class="section">
+            <header>
+                <h1>Pertemuan 06 - Algoritma Pewarnaan Bidang</h1>
+            </header>
+
+            <div class="card">
+                <h2>Teori Pewarnaan Graf</h2>
+                <p>Pewarnaan graf adalah penugasan label (warna) ke elemen-elemen graf (simpul, sisi, atau wilayah)
+                    dengan
+                    batasan tertentu. Pada pertemuan ini, fokus kita adalah pewarnaan simpul (vertex coloring) dengan
+                    algoritma
+                    Welch-Powell.</p>
+
+                <div class="step-box">
+                    <h3>Algoritma Welch-Powell</h3>
+                    <ol>
+                        <li>Urutkan simpul-simpul dalam derajat menurun (simpul dengan derajat tertinggi pertama)</li>
+                        <li>Gunakan warna pertama untuk mewarnai simpul pertama</li>
+                        <li>Warnai simpul berikutnya yang tidak bertetangga dengan simpul sebelumnya yang telah diwarnai
+                            dengan
+                            warna yang sama, secara berurutan</li>
+                        <li>Ulangi langkah 2 dan 3 dengan warna baru untuk simpul yang belum diwarnai hingga semua
+                            simpul terwarnai
+                        </li>
+                    </ol>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2>Implementasi Interaktif</h2>
+
+                <div class="input-group">
+                    <label>Pilih Graf Contoh:</label>
+                    <select id="graphSelect">
+                        <option value="g1">Graf 1 (Contoh dari Materi)</option>
+                        <option value="g2">Graf 2 (Bipartit)</option>
+                        <option value="g3">Graf 3 (Contoh Lain)</option>
+                    </select>
+                    <button class="btn" id="drawGraphBtn">Gambar Graf</button>
+                    <button class="btn" id="colorGraphBtn">Warnai Graf</button>
+                </div>
+
+                <div class="graph-container" id="graphContainer">
+                    <!-- Graf akan dirender di sini oleh JavaScript -->
+                </div>
+
+                <div class="table-container">
+                    <h3>Hasil Pewarnaan (Algoritma Welch-Powell)</h3>
+                    <table id="coloringTable">
+                        <thead>
+                            <tr>
+                                <th>Simpul</th>
+                                <th>Derajat</th>
+                                <th>Warna</th>
+                                <th>Nilai Warna</th>
+                            </tr>
+                        </thead>
+                        <tbody id="coloringTableBody">
+                            <!-- Hasil akan diisi oleh JavaScript -->
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="step-box">
+                    <h3>Langkah-langkah Pewarnaan</h3>
+                    <div id="stepsContainer">
+                        <!-- Langkah-langkah akan diisi oleh JavaScript -->
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer">
+                <p>Materi Komputer Grafik - Pertemuan 6: Algoritma Pewarnaan Bidang</p>
+                <p>Universitas Pamulang - Teknik Informatika S1</p>
+            </div>
+        </section>
+    </main>
+
+
+    <script>
+        feather.replace();
+
+        // Graf contoh
+        const graphs = {
+            g1: {
+                vertices: ["A", "B", "C", "D", "E", "F", "G"],
+                edges: [
+                    ["A", "B"],
+                    ["A", "C"],
+                    ["A", "D"],
+                    ["A", "E"],
+                    ["A", "G"],
+                    ["B", "C"],
+                    ["C", "D"],
+                    ["D", "E"],
+                    ["D", "F"],
+                    ["E", "F"],
+                    ["F", "G"],
+                ],
+                positions: {
+                    A: { x: 250, y: 50 },
+                    B: { x: 100, y: 150 },
+                    C: { x: 200, y: 150 },
+                    D: { x: 300, y: 150 },
+                    E: { x: 400, y: 150 },
+                    F: { x: 350, y: 250 },
+                    G: { x: 150, y: 250 },
+                },
+            },
+            g2: {
+                vertices: ["A", "B", "C", "D", "E"],
+                edges: [
+                    ["A", "D"],
+                    ["A", "E"],
+                    ["B", "D"],
+                    ["B", "E"],
+                    ["C", "D"],
+                    ["C", "E"],
+                ],
+                positions: {
+                    A: { x: 100, y: 100 },
+                    B: { x: 100, y: 250 },
+                    C: { x: 100, y: 400 },
+                    D: { x: 400, y: 150 },
+                    E: { x: 400, y: 300 },
+                },
+            },
+            g3: {
+                vertices: ["A", "B", "C", "D", "E", "F"],
+                edges: [
+                    ["A", "B"],
+                    ["A", "C"],
+                    ["A", "D"],
+                    ["B", "C"],
+                    ["B", "E"],
+                    ["C", "F"],
+                    ["D", "E"],
+                    ["D", "F"],
+                    ["E", "F"],
+                ],
+                positions: {
+                    A: { x: 250, y: 50 },
+                    B: { x: 100, y: 200 },
+                    C: { x: 400, y: 200 },
+                    D: { x: 100, y: 350 },
+                    E: { x: 250, y: 350 },
+                    F: { x: 400, y: 350 },
+                },
+            },
+        };
+
+        // Palet warna
+        const colorPalette = [
+            "#ef4444",
+            "#10b981",
+            "#2563eb",
+            "#ec4899",
+            "#f59e0b",
+            "#8b5cf6",
+        ];
+
+        // Render graf ke dalam container
+        function renderGraph(containerId, graph) {
+            const container = document.getElementById(containerId);
+            container.innerHTML = "";
+
+            // Render sisi
+            graph.edges.forEach((edge) => {
+                const [v1, v2] = edge;
+                const p1 = graph.positions[v1];
+                const p2 = graph.positions[v2];
+
+                const edgeEl = document.createElement("div");
+                edgeEl.className = "edge";
+
+                // Hitung panjang dan rotasi
+                const length = Math.sqrt(
+                    Math.pow(p2.x - p1.x, 2) + Math.pow(p2.y - p1.y, 2)
+                );
+                const angle = (Math.atan2(p2.y - p1.y, p2.x - p1.x) * 180) / Math.PI;
+
+                edgeEl.style.width = `${length}px`;
+                edgeEl.style.left = `${p1.x}px`;
+                edgeEl.style.top = `${p1.y}px`;
+                edgeEl.style.transform = `rotate(${angle}deg)`;
+
+                container.appendChild(edgeEl);
+            });
+
+            // Render simpul
+            graph.vertices.forEach((vertex) => {
+                const pos = graph.positions[vertex];
+
+                const vertexEl = document.createElement("div");
+                vertexEl.className = "vertex";
+                vertexEl.id = `vertex-${vertex}`;
+                vertexEl.textContent = vertex;
+                vertexEl.style.left = `${pos.x - 20}px`;
+                vertexEl.style.top = `${pos.y - 20}px`;
+                vertexEl.style.backgroundColor = "#94a3b8";
+
+                container.appendChild(vertexEl);
+            });
+        }
+
+        // Hitung derajat setiap simpul
+        function calculateDegrees(vertices, edges) {
+            const degrees = {};
+            vertices.forEach((v) => (degrees[v] = 0));
+
+            edges.forEach((edge) => {
+                degrees[edge[0]]++;
+                degrees[edge[1]]++;
+            });
+
+            return degrees;
+        }
+
+        // Algoritma Welch-Powell untuk pewarnaan simpul
+        function welchPowell(vertices, edges) {
+            // Hitung derajat setiap simpul
+            const degrees = calculateDegrees(vertices, edges);
+
+            // Urutkan simpul berdasarkan derajat menurun
+            const sortedVertices = [...vertices].sort((a, b) => degrees[b] - degrees[a]);
+
+            // Inisialisasi warna: -1 artinya belum diwarnai
+            const colors = {};
+            vertices.forEach((v) => (colors[v] = -1));
+
+            // Proses pewarnaan
+            let currentColor = 0;
+            const colored = new Set();
+            const steps = [];
+
+            while (colored.size < vertices.length) {
+                const step = {
+                    color: currentColor,
+                    coloredVertices: [],
+                };
+
+                // Ambil simpul dengan derajat tertinggi yang belum diwarnai
+                let vertex;
+                for (let i = 0; i < sortedVertices.length; i++) {
+                    if (!colored.has(sortedVertices[i])) {
+                        vertex = sortedVertices[i];
+                        break;
+                    }
+                }
+
+                if (vertex === undefined) break;
+
+                // Warnai simpul ini dengan warna saat ini
+                colors[vertex] = currentColor;
+                colored.add(vertex);
+                step.coloredVertices.push(vertex);
+
+                // Cari semua simpul yang tidak bertetangga dengan simpul ini dan belum diwarnai
+                const nonNeighbors = sortedVertices.filter((v) => {
+                    // Skip jika sudah diwarnai
+                    if (colored.has(v)) return false;
+
+                    // Cek apakah bertetangga?
+                    const isNeighbor = edges.some(
+                        (edge) =>
+                            (edge[0] === vertex && edge[1] === v) ||
+                            (edge[0] === v && edge[1] === vertex)
+                    );
+
+                    return !isNeighbor;
+                });
+
+                // Warnai semua nonNeighbors dengan warna yang sama
+                nonNeighbors.forEach((v) => {
+                    colors[v] = currentColor;
+                    colored.add(v);
+                    step.coloredVertices.push(v);
+                });
+
+                steps.push(step);
+                currentColor++;
+            }
+
+            return { colors, steps };
+        }
+
+        // Terapkan warna ke graf
+        function applyColors(colors) {
+            Object.keys(colors).forEach((vertex) => {
+                const vertexEl = document.getElementById(`vertex-${vertex}`);
+                if (vertexEl) {
+                    const colorIndex = colors[vertex] % colorPalette.length;
+                    vertexEl.style.backgroundColor = colorPalette[colorIndex];
+                }
+            });
+        }
+
+        // Tampilkan hasil dalam tabel
+        function renderColoringTable(vertices, degrees, colors) {
+            const tableBody = document.getElementById("coloringTableBody");
+            tableBody.innerHTML = "";
+
+            vertices.forEach((vertex) => {
+                const row = document.createElement("tr");
+                const colorIndex = colors[vertex] % colorPalette.length;
+
+                row.innerHTML = `
+          <td>${vertex}</td>
+          <td>${degrees[vertex]}</td>
+          <td><div class="color-box" style="background-color: ${colorPalette[colorIndex]
+                    }"></div></td>
+          <td>Warna ${colors[vertex] + 1}</td>
+        `;
+                tableBody.appendChild(row);
+            });
+        }
+
+        // Tampilkan langkah-langkah
+        function renderSteps(steps) {
+            const container = document.getElementById("stepsContainer");
+            container.innerHTML = "";
+
+            steps.forEach((step, index) => {
+                const stepEl = document.createElement("div");
+                stepEl.className = "step";
+                stepEl.style.marginBottom = "15px";
+
+                const colorIndex = step.color % colorPalette.length;
+
+                let verticesHtml = step.coloredVertices
+                    .map(
+                        (v) =>
+                            `<span style="background-color: ${colorPalette[colorIndex]}; 
+            color: white; 
+            padding: 3px 8px; 
+            border-radius: 20px;
+            margin: 0 5px;
+            display: inline-block;">${v}</span>`
+                    )
+                    .join("");
+
+                stepEl.innerHTML = `
+          <h4>Langkah ${index + 1}: Gunakan Warna ${step.color + 1}</h4>
+          <div>${verticesHtml}</div>
+          <p>Memberi warna pada simpul-simpul: ${step.coloredVertices.join(
+                    ", "
+                )}</p>
+        `;
+
+                container.appendChild(stepEl);
+            });
+        }
+
+        // Event listener untuk tombol "Gambar Graf"
+        document.getElementById("drawGraphBtn")?.addEventListener("click", function () {
+            const graphSelect = document.getElementById("graphSelect");
+            const graphKey = graphSelect.value;
+            const graph = graphs[graphKey];
+
+            renderGraph("graphContainer", graph);
+        });
+
+        // Event listener untuk tombol "Warnai Graf"
+        document
+            .getElementById("colorGraphBtn")
+            ?.addEventListener("click", function () {
+                const graphSelect = document.getElementById("graphSelect");
+                const graphKey = graphSelect.value;
+                const graph = graphs[graphKey];
+
+                // Jalankan algoritma Welch-Powell
+                const { colors, steps } = welchPowell(graph.vertices, graph.edges);
+
+                // Terapkan warna ke graf
+                applyColors(colors);
+
+                // Tampilkan hasil dalam tabel
+                const degrees = calculateDegrees(graph.vertices, graph.edges);
+                renderColoringTable(graph.vertices, degrees, colors);
+
+                // Tampilkan langkah-langkah
+                renderSteps(steps);
+            });
+
+        // Inisialisasi: Gambar graf pertama saat halaman dimuat
+        document.addEventListener("DOMContentLoaded", function () {
+            // Jika di halaman pertemuan 6
+            if (window.location.hash === "#pert-6") {
+                const graph = graphs.g1;
+                renderGraph("graphContainer", graph);
+
+                // Jalankan algoritma Welch-Powell
+                const { colors, steps } = welchPowell(graph.vertices, graph.edges);
+
+                // Terapkan warna ke graf
+                setTimeout(() => applyColors(colors), 500);
+
+                // Tampilkan hasil dalam tabel
+                const degrees = calculateDegrees(graph.vertices, graph.edges);
+                renderColoringTable(graph.vertices, degrees, colors);
+
+                // Tampilkan langkah-langkah
+                renderSteps(steps);
+            }
+        });
+    </script>
+
+    <!-- My JavaScript -->
+    <script src="js/script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,959 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Komputer Grafik</title>
+
+    <!-- My Style -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Feather Icons -->
+    <script src="https://unpkg.com/feather-icons"></script>
+</head>
+
+<body>
+
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo"><a href="index.html">Komputer<span>Grafik</span></a></div>
+                <div class="line"></div>
+                <button onclick="toggleSidebar()" class="toggle-button" id="toggle-button"><i
+                        data-feather="chevrons-right"></i></button>
+            </nav>
+        </div>
+    </header>
+
+    <aside class="sidebar" id="sidebar">
+        <ul class="sidebar-menu">
+            <!-- <button onclick=closeSidebar() id="close-btn"><i data-feather="x"></i></button> -->
+            <h3 class="logo"><a href="index.html">DAFTAR ISI</a></h1>
+
+                <li class="sidebar-item">
+                    <a href="pert-1.html">
+                        <i data-feather="book"></i>
+                        <span>Pertemuan 1</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="pert-2.html">
+                        <i data-feather="book"></i>
+                        <span>Pertemuan 2</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="pert-3.html">
+                        <i data-feather="book"></i>
+                        <span>Pertemuan 3</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="pert-4.html">
+                        <i data-feather="book"></i>
+                        <span>Pertemuan 4</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="pert-5.html">
+                        <i data-feather="book"></i>
+                        <span>Pertemuan 5</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="pert-6.html">
+                        <i data-feather="book"></i>
+                        <span>Pertemuan 6</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="pert-7.html">
+                        <i data-feather="book"></i>
+                        <span>Pertemuan 7</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="pert-8.html">
+                        <i data-feather="book"></i>
+                        <span>Pertemuan 8</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="pert-9.html">
+                        <i data-feather="book"></i>
+                        <span>Pertemuan 9</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="pert-10.html">
+                        <i data-feather="book"></i>
+                        <span>Pertemuan 10</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="pert-11.html">
+                        <i data-feather="book"></i>
+                        <span>Pertemuan 11</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="pert-12.html">
+                        <i data-feather="book"></i>
+                        <span>Pertemuan 12</span>
+                    </a>
+                </li>
+                <li class="sidebar-item active">
+                    <a href="pert-13.html">
+                        <i data-feather="book"></i>
+                        <span>Pertemuan 13</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="pert-14.html">
+                        <i data-feather="book"></i>
+                        <span>Pertemuan 14</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="tugas-dashboard.html">
+                        <i data-feather="book-open"></i>
+                        <span>Tugas Dashboard</span>
+                    </a>
+                </li>
+        </ul>
+    </aside>
+
+    <main>
+        <section id="pert-13" class="section">
+            <header>
+                <h1>Pertemuan 13 - Pemrograman Komputer Grafik Menggunakan API</h1>
+            </header>
+
+            <div class="card-container">
+                <!-- Card 1: OpenGL Programming -->
+                <div class="card">
+                    <div class="card-header">
+                        <h2>Pemrograman Grafis 3D dengan OpenGL</h2>
+                        <p>Simulasi interaktif objek 3D dengan kontrol rotasi pada tiga sumbu</p>
+                    </div>
+                    <div class="card-body">
+                        <div class="canvas-container">
+                            <canvas id="openglCanvas" width="400" height="400"></canvas>
+                        </div>
+
+                        <div class="controls">
+                            <div class="control-group">
+                                <h3>Kontrol Rotasi</h3>
+
+                                <div class="rotation-controls">
+                                    <div class="axis-control">
+                                        <div class="axis-label">
+                                            <span class="axis-name">Rotasi X</span>
+                                            <span id="rotXValue" class="value-display">30°</span>
+                                        </div>
+                                        <input type="range" id="rotXSlider" min="0" max="360" value="30">
+                                    </div>
+
+                                    <div class="axis-control">
+                                        <div class="axis-label">
+                                            <span class="axis-name">Rotasi Y</span>
+                                            <span id="rotYValue" class="value-display">45°</span>
+                                        </div>
+                                        <input type="range" id="rotYSlider" min="0" max="360" value="45">
+                                    </div>
+
+                                    <div class="axis-control">
+                                        <div class="axis-label">
+                                            <span class="axis-name">Rotasi Z</span>
+                                            <span id="rotZValue" class="value-display">20°</span>
+                                        </div>
+                                        <input type="range" id="rotZSlider" min="0" max="360" value="20">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="control-group">
+                                <h3>Kontrol Objek</h3>
+                                <select id="objectSelect">
+                                    <option value="cube">Kubus</option>
+                                    <option value="pyramid">Piramida</option>
+                                    <option value="cylinder">Silinder</option>
+                                    <option value="sphere">Bola</option>
+                                    <option value="torus">Torus</option>
+                                </select>
+                                <button id="resetBtn">Reset Posisi</button>
+                                <button class="btn-accent" id="colorBtn">Ubah Warna</button>
+                            </div>
+                        </div>
+
+                        <div class="explanation">
+                            <h3>Apa itu OpenGL?</h3>
+                            <p><span class="highlight">OpenGL (Open Graphics Library)</span> adalah API grafis 2D dan 3D
+                                yang dikembangkan oleh Silicon Graphics Inc. (SGI).</p>
+                            <p>Karakteristik utama OpenGL:</p>
+                            <ul>
+                                <li>Antarmuka yang efisien dan tidak bergantung pada perangkat keras</li>
+                                <li>Dapat diimplementasikan pada berbagai platform</li>
+                                <li>Menggunakan primitive geometris (titik, garis, poligon)</li>
+                                <li>Membentuk dasar dari game, CAD, dan industri VR</li>
+                                <li>Mendukung transformasi 3D dan rendering tingkat lanjut</li>
+                            </ul>
+                        </div>
+
+                        <div class="code-block">
+                            <div class="code-header">
+                                <span>Contoh Kode OpenGL untuk Kubus 3D</span>
+                                <span>C++</span>
+                            </div>
+                            <pre>
+#include &lt;GL/glut.h&gt;
+
+void display() {
+    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+    glLoadIdentity();
+    gluLookAt(3, 3, 3, 0, 0, 0, 0, 1, 0);
+    
+    glRotatef(angleX, 1.0, 0.0, 0.0);
+    glRotatef(angleY, 0.0, 1.0, 0.0);
+    glRotatef(angleZ, 0.0, 0.0, 1.0);
+    
+    glBegin(GL_QUADS);
+        // Depan
+        glColor3f(1.0, 0.0, 0.0);
+        glVertex3f(-1.0, -1.0, 1.0);
+        glVertex3f(1.0, -1.0, 1.0);
+        glVertex3f(1.0, 1.0, 1.0);
+        glVertex3f(-1.0, 1.0, 1.0);
+        
+        // Belakang
+        glColor3f(0.0, 1.0, 0.0);
+        glVertex3f(-1.0, -1.0, -1.0);
+        glVertex3f(1.0, -1.0, -1.0);
+        glVertex3f(1.0, 1.0, -1.0);
+        glVertex3f(-1.0, 1.0, -1.0);
+        
+        // Kiri
+        glColor3f(0.0, 0.0, 1.0);
+        glVertex3f(-1.0, -1.0, 1.0);
+        glVertex3f(-1.0, -1.0, -1.0);
+        glVertex3f(-1.0, 1.0, -1.0);
+        glVertex3f(-1.0, 1.0, 1.0);
+        
+        // Kanan
+        glColor3f(1.0, 1.0, 0.0);
+        glVertex3f(1.0, -1.0, 1.0);
+        glVertex3f(1.0, -1.0, -1.0);
+        glVertex3f(1.0, 1.0, -1.0);
+        glVertex3f(1.0, 1.0, 1.0);
+        
+        // Atas
+        glColor3f(1.0, 0.0, 1.0);
+        glVertex3f(-1.0, 1.0, 1.0);
+        glVertex3f(1.0, 1.0, 1.0);
+        glVertex3f(1.0, 1.0, -1.0);
+        glVertex3f(-1.0, 1.0, -1.0);
+        
+        // Bawah
+        glColor3f(0.0, 1.0, 1.0);
+        glVertex3f(-1.0, -1.0, 1.0);
+        glVertex3f(1.0, -1.0, 1.0);
+        glVertex3f(1.0, -1.0, -1.0);
+        glVertex3f(-1.0, -1.0, -1.0);
+    glEnd();
+    
+    glutSwapBuffers();
+}
+
+int main(int argc, char** argv) {
+    glutInit(&argc, argv);
+    glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB | GLUT_DEPTH);
+    glutInitWindowSize(800, 600);
+    glutCreateWindow("Kubus 3D dengan OpenGL");
+    glEnable(GL_DEPTH_TEST);
+    glutDisplayFunc(display);
+    glutMainLoop();
+    return 0;
+}
+                        </pre>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2: Image Processing -->
+                <div class="card">
+                    <div class="card-header">
+                        <h2>Pengolahan Citra Digital</h2>
+                        <p>Manipulasi dan transformasi gambar menggunakan teknik pengolahan citra</p>
+                    </div>
+                    <div class="card-body">
+                        <div class="controls">
+                            <div class="control-group">
+                                <h3>Unggah Gambar</h3>
+                                <input type="file" id="imageUpload" accept="image/*">
+                            </div>
+
+                            <div class="control-group">
+                                <h3>Operasi Citra</h3>
+                                <button id="grayscaleBtn">Grayscale</button>
+                                <button id="binaryBtn">Biner (Monokrom)</button>
+                                <button id="invertBtn">Invert Warna</button>
+                                <button class="btn-accent" id="resetImageBtn">Reset Gambar</button>
+                            </div>
+                        </div>
+
+                        <div class="canvas-container">
+                            <div style="display: flex; justify-content: space-around; flex-wrap: wrap;">
+                                <div style="margin: 10px;">
+                                    <h3 style="text-align: center; margin-bottom: 10px; color: #2c3e50;">Gambar Asli
+                                    </h3>
+                                    <canvas id="originalCanvas" width="200" height="200"></canvas>
+                                </div>
+                                <div style="margin: 10px;">
+                                    <h3 style="text-align: center; margin-bottom: 10px; color: #2c3e50;">Hasil
+                                        Pengolahan</h3>
+                                    <canvas id="processedCanvas" width="200" height="200"></canvas>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="explanation">
+                            <h3>Konsep Dasar Citra Digital</h3>
+                            <p><span class="highlight">Citra digital</span> adalah representasi dari citra yang diambil
+                                oleh mesin dengan bentuk pendekatan berdasarkan sampling dan kuantisasi.</p>
+
+                            <p><span class="highlight">Sampling</span> menyatakan besarnya kotak-kotak yang disusun
+                                dalam baris dan kolom (piksel).</p>
+
+                            <p><span class="highlight">Kuantisasi</span> menyatakan besarnya nilai tingkat kecerahan
+                                yang dinyatakan dalam nilai tingkat keabuan.</p>
+                        </div>
+
+                        <div class="image-types">
+                            <div class="image-type">
+                                <div class="image-demo" style="background: linear-gradient(to right, #000, #fff);">
+                                </div>
+                                <h4>Citra Biner (Monokrom)</h4>
+                                <p>Hanya terdiri dari dua warna: hitam dan putih. Dibutuhkan 1 bit di memori.</p>
+                            </div>
+
+                            <div class="image-type">
+                                <div class="image-demo"
+                                    style="background: linear-gradient(to right, #000, #444, #888, #bbb, #fff);"></div>
+                                <h4>Citra Grayscale</h4>
+                                <p>Berbagai tingkat keabuan. Semakin besar jumlah bit warna, semakin halus gradasi.</p>
+                            </div>
+
+                            <div class="image-type">
+                                <div class="image-demo"
+                                    style="background: linear-gradient(to right, #f00, #ff0, #0f0, #0ff, #00f, #f0f, #f00);">
+                                </div>
+                                <h4>Citra Warna (True Color)</h4>
+                                <p>Setiap piksel merupakan kombinasi dari tiga warna dasar (RGB).</p>
+                            </div>
+                        </div>
+
+                        <div class="explanation">
+                            <h3>Teknik Pengolahan Citra</h3>
+                            <ul>
+                                <li><span class="highlight">Image Enhancement:</span> Perbaikan citra dengan
+                                    meningkatkan kualitas citra</li>
+                                <li><span class="highlight">Image Restoration:</span> Proses memperbaiki model citra
+                                </li>
+                                <li><span class="highlight">Color Image Processing:</span> Proses yang melibatkan citra
+                                    berwarna</li>
+                                <li><span class="highlight">Segmentation:</span> Proses untuk membedakan atau memisahkan
+                                    objek-objek</li>
+                                <li><span class="highlight">Object Recognition:</span> Proses untuk mengenali
+                                    objek-objek dalam citra</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <footer>
+                <p>Materi Komputer Grafik - Pertemuan 13: Pemrograman Komputer Grafik Menggunakan API</p>
+                <p>Universitas Pamulang - Teknik Informatika S1</p>
+            </footer>
+        </section>
+    </main>
+
+
+    <script>
+        feather.replace();
+
+        // OpenGL 3D Simulation
+        const openglCanvas = document.getElementById('openglCanvas');
+        const glCtx = openglCanvas.getContext('2d');
+
+        // Rotation sliders
+        const rotXSlider = document.getElementById('rotXSlider');
+        const rotYSlider = document.getElementById('rotYSlider');
+        const rotZSlider = document.getElementById('rotZSlider');
+        const rotXValue = document.getElementById('rotXValue');
+        const rotYValue = document.getElementById('rotYValue');
+        const rotZValue = document.getElementById('rotZValue');
+
+        // Object controls
+        const objectSelect = document.getElementById('objectSelect');
+        const resetBtn = document.getElementById('resetBtn');
+        const colorBtn = document.getElementById('colorBtn');
+
+        // Image processing elements
+        const imageUpload = document.getElementById('imageUpload');
+        const originalCanvas = document.getElementById('originalCanvas');
+        const originalCtx = originalCanvas.getContext('2d');
+        const processedCanvas = document.getElementById('processedCanvas');
+        const processedCtx = processedCanvas.getContext('2d');
+        const grayscaleBtn = document.getElementById('grayscaleBtn');
+        const binaryBtn = document.getElementById('binaryBtn');
+        const invertBtn = document.getElementById('invertBtn');
+        const resetImageBtn = document.getElementById('resetImageBtn');
+
+        let currentRotation = { x: 30, y: 45, z: 20 };
+        let currentColor = '#3498db';
+        let originalImage = null;
+
+        // Initialize
+        window.addEventListener('load', () => {
+            draw3DObject();
+            setupEventListeners();
+        });
+
+        function setupEventListeners() {
+            // OpenGL controls
+            rotXSlider.addEventListener('input', updateRotation);
+            rotYSlider.addEventListener('input', updateRotation);
+            rotZSlider.addEventListener('input', updateRotation);
+
+            objectSelect.addEventListener('change', draw3DObject);
+            resetBtn.addEventListener('click', resetRotation);
+            colorBtn.addEventListener('click', changeColor);
+
+            // Image processing controls
+            imageUpload.addEventListener('change', handleImageUpload);
+            grayscaleBtn.addEventListener('click', applyGrayscale);
+            binaryBtn.addEventListener('click', applyBinary);
+            invertBtn.addEventListener('click', applyInvert);
+            resetImageBtn.addEventListener('click', resetImage);
+        }
+
+        function updateRotation() {
+            currentRotation.x = parseInt(rotXSlider.value);
+            currentRotation.y = parseInt(rotYSlider.value);
+            currentRotation.z = parseInt(rotZSlider.value);
+
+            rotXValue.textContent = currentRotation.x + '°';
+            rotYValue.textContent = currentRotation.y + '°';
+            rotZValue.textContent = currentRotation.z + '°';
+
+            draw3DObject();
+        }
+
+        function resetRotation() {
+            currentRotation = { x: 30, y: 45, z: 20 };
+            rotXSlider.value = currentRotation.x;
+            rotYSlider.value = currentRotation.y;
+            rotZSlider.value = currentRotation.z;
+            updateRotation();
+        }
+
+        function changeColor() {
+            const colors = ['#3498db', '#2ecc71', '#e74c3c', '#9b59b6', '#f1c40f', '#1abc9c'];
+            currentColor = colors[Math.floor(Math.random() * colors.length)];
+            draw3DObject();
+        }
+
+        function draw3DObject() {
+            glCtx.clearRect(0, 0, openglCanvas.width, openglCanvas.height);
+
+            // Draw gradient background
+            const gradient = glCtx.createLinearGradient(0, 0, openglCanvas.width, openglCanvas.height);
+            gradient.addColorStop(0, '#1a2a6c');
+            gradient.addColorStop(1, '#2c3e50');
+            glCtx.fillStyle = gradient;
+            glCtx.fillRect(0, 0, openglCanvas.width, openglCanvas.height);
+
+            // Draw grid
+            glCtx.strokeStyle = 'rgba(255, 255, 255, 0.2)';
+            glCtx.lineWidth = 1;
+            glCtx.beginPath();
+
+            for (let x = 0; x <= openglCanvas.width; x += 20) {
+                glCtx.moveTo(x, 0);
+                glCtx.lineTo(x, openglCanvas.height);
+            }
+
+            for (let y = 0; y <= openglCanvas.height; y += 20) {
+                glCtx.moveTo(0, y);
+                glCtx.lineTo(openglCanvas.width, y);
+            }
+
+            glCtx.stroke();
+
+            // Draw 3D object
+            const centerX = openglCanvas.width / 2;
+            const centerY = openglCanvas.height / 2;
+            const size = 80;
+
+            glCtx.save();
+            glCtx.translate(centerX, centerY);
+
+            // Apply 3D rotation
+            const objectType = objectSelect.value;
+
+            if (objectType === 'cube') {
+                drawCube3D(glCtx, size);
+            } else if (objectType === 'pyramid') {
+                drawPyramid3D(glCtx, size);
+            } else if (objectType === 'cylinder') {
+                drawCylinder3D(glCtx, size);
+            } else if (objectType === 'sphere') {
+                drawSphere3D(glCtx, size);
+            } else if (objectType === 'torus') {
+                drawTorus3D(glCtx, size);
+            }
+
+            glCtx.restore();
+        }
+
+        // Rotate a point around X, Y, and Z axes
+        function rotatePoint(x, y, z, rx, ry, rz) {
+            // Rotate around X axis
+            const cosX = Math.cos(rx * Math.PI / 180);
+            const sinX = Math.sin(rx * Math.PI / 180);
+            const y1 = y * cosX - z * sinX;
+            const z1 = y * sinX + z * cosX;
+
+            // Rotate around Y axis
+            const cosY = Math.cos(ry * Math.PI / 180);
+            const sinY = Math.sin(ry * Math.PI / 180);
+            const x1 = x * cosY + z1 * sinY;
+            const z2 = -x * sinY + z1 * cosY;
+
+            // Rotate around Z axis
+            const cosZ = Math.cos(rz * Math.PI / 180);
+            const sinZ = Math.sin(rz * Math.PI / 180);
+            const x2 = x1 * cosZ - y1 * sinZ;
+            const y2 = x1 * sinZ + y1 * cosZ;
+
+            return { x: x2, y: y2, z: z2 };
+        }
+
+        // Project 3D point to 2D with perspective
+        function projectPoint(x, y, z) {
+            const fov = 800; // Field of view
+            const scale = fov / (fov + z);
+            return { x: x * scale, y: y * scale };
+        }
+
+        function drawCube3D(ctx, size) {
+            const half = size / 2;
+
+            // Define cube vertices
+            const vertices = [
+                { x: -half, y: -half, z: -half }, // 0
+                { x: half, y: -half, z: -half },  // 1
+                { x: half, y: half, z: -half },   // 2
+                { x: -half, y: half, z: -half },  // 3
+                { x: -half, y: -half, z: half },  // 4
+                { x: half, y: -half, z: half },   // 5
+                { x: half, y: half, z: half },    // 6
+                { x: -half, y: half, z: half }    // 7
+            ];
+
+            // Define faces (each face is 4 vertices)
+            const faces = [
+                { vertices: [0, 1, 2, 3], color: '#e74c3c' }, // back
+                { vertices: [4, 5, 6, 7], color: '#3498db' }, // front
+                { vertices: [0, 3, 7, 4], color: '#2ecc71' }, // left
+                { vertices: [1, 2, 6, 5], color: '#f1c40f' }, // right
+                { vertices: [0, 1, 5, 4], color: '#9b59b6' }, // bottom
+                { vertices: [2, 3, 7, 6], color: '#1abc9c' }  // top
+            ];
+
+            // Rotate and project vertices
+            const projected = [];
+            for (let i = 0; i < vertices.length; i++) {
+                const rotated = rotatePoint(
+                    vertices[i].x,
+                    vertices[i].y,
+                    vertices[i].z,
+                    currentRotation.x,
+                    currentRotation.y,
+                    currentRotation.z
+                );
+                projected[i] = projectPoint(rotated.x, rotated.y, rotated.z);
+            }
+
+            // Draw faces with depth sorting
+            faces.sort((a, b) => {
+                // Calculate average z for each face
+                const zA = a.vertices.reduce((sum, idx) => sum + vertices[idx].z, 0) / a.vertices.length;
+                const zB = b.vertices.reduce((sum, idx) => sum + vertices[idx].z, 0) / b.vertices.length;
+                return zB - zA; // Sort back to front
+            });
+
+            // Draw each face
+            for (const face of faces) {
+                ctx.fillStyle = face.color;
+                ctx.beginPath();
+                for (let i = 0; i < face.vertices.length; i++) {
+                    const v = projected[face.vertices[i]];
+                    if (i === 0) ctx.moveTo(v.x, v.y);
+                    else ctx.lineTo(v.x, v.y);
+                }
+                ctx.closePath();
+                ctx.fill();
+
+                // Draw face outline
+                ctx.strokeStyle = '#2c3e50';
+                ctx.lineWidth = 2;
+                ctx.stroke();
+            }
+        }
+
+        function drawPyramid3D(ctx, size) {
+            const half = size / 2;
+            const height = size * 0.8;
+
+            // Define pyramid vertices
+            const vertices = [
+                { x: -half, y: -half, z: -half }, // 0 base
+                { x: half, y: -half, z: -half },  // 1
+                { x: half, y: -half, z: half },   // 2
+                { x: -half, y: -half, z: half },  // 3
+                { x: 0, y: height, z: 0 }         // 4 top
+            ];
+
+            // Define faces
+            const faces = [
+                { vertices: [0, 1, 2, 3], color: '#3498db' }, // base
+                { vertices: [0, 1, 4], color: '#e74c3c' },    // front
+                { vertices: [1, 2, 4], color: '#2ecc71' },    // right
+                { vertices: [2, 3, 4], color: '#f1c40f' },    // back
+                { vertices: [3, 0, 4], color: '#9b59b6' }     // left
+            ];
+
+            // Rotate and project vertices
+            const projected = [];
+            for (let i = 0; i < vertices.length; i++) {
+                const rotated = rotatePoint(
+                    vertices[i].x,
+                    vertices[i].y,
+                    vertices[i].z,
+                    currentRotation.x,
+                    currentRotation.y,
+                    currentRotation.z
+                );
+                projected[i] = projectPoint(rotated.x, rotated.y, rotated.z);
+            }
+
+            // Draw faces
+            for (const face of faces) {
+                ctx.fillStyle = face.color;
+                ctx.beginPath();
+                for (let i = 0; i < face.vertices.length; i++) {
+                    const v = projected[face.vertices[i]];
+                    if (i === 0) ctx.moveTo(v.x, v.y);
+                    else ctx.lineTo(v.x, v.y);
+                }
+                ctx.closePath();
+                ctx.fill();
+
+                // Draw face outline
+                ctx.strokeStyle = '#2c3e50';
+                ctx.lineWidth = 2;
+                ctx.stroke();
+            }
+        }
+
+        function drawCylinder3D(ctx, size) {
+            const radius = size / 2;
+            const height = size;
+            const segments = 16;
+
+            // Generate cylinder points
+            const points = [];
+            for (let i = 0; i < segments; i++) {
+                const angle = (i / segments) * Math.PI * 2;
+                const x = Math.cos(angle) * radius;
+                const z = Math.sin(angle) * radius;
+
+                // Bottom circle
+                points.push({ x, y: -height / 2, z });
+                // Top circle
+                points.push({ x, y: height / 2, z });
+            }
+
+            // Rotate and project points
+            const projected = [];
+            for (let i = 0; i < points.length; i++) {
+                const rotated = rotatePoint(
+                    points[i].x,
+                    points[i].y,
+                    points[i].z,
+                    currentRotation.x,
+                    currentRotation.y,
+                    currentRotation.z
+                );
+                projected[i] = projectPoint(rotated.x, rotated.y, rotated.z);
+            }
+
+            // Draw sides
+            ctx.fillStyle = '#3498db';
+            for (let i = 0; i < segments; i++) {
+                const next = (i + 1) % segments;
+
+                const p1 = projected[i * 2];        // Bottom current
+                const p2 = projected[next * 2];      // Bottom next
+                const p3 = projected[next * 2 + 1];  // Top next
+                const p4 = projected[i * 2 + 1];     // Top current
+
+                ctx.beginPath();
+                ctx.moveTo(p1.x, p1.y);
+                ctx.lineTo(p2.x, p2.y);
+                ctx.lineTo(p3.x, p3.y);
+                ctx.lineTo(p4.x, p4.y);
+                ctx.closePath();
+                ctx.fill();
+
+                ctx.strokeStyle = '#2c3e50';
+                ctx.lineWidth = 2;
+                ctx.stroke();
+            }
+
+            // Draw top and bottom
+            ctx.fillStyle = '#2ecc71';
+            ctx.beginPath();
+            for (let i = 0; i < segments; i++) {
+                const p = projected[i * 2]; // Bottom point
+                if (i === 0) ctx.moveTo(p.x, p.y);
+                else ctx.lineTo(p.x, p.y);
+            }
+            ctx.closePath();
+            ctx.fill();
+            ctx.stroke();
+
+            ctx.fillStyle = '#e74c3c';
+            ctx.beginPath();
+            for (let i = 0; i < segments; i++) {
+                const p = projected[i * 2 + 1]; // Top point
+                if (i === 0) ctx.moveTo(p.x, p.y);
+                else ctx.lineTo(p.x, p.y);
+            }
+            ctx.closePath();
+            ctx.fill();
+            ctx.stroke();
+        }
+
+        function drawSphere3D(ctx, size) {
+            const radius = size / 2;
+            const segments = 16;
+            const rings = 8;
+
+            // Generate sphere points
+            const points = [];
+            for (let r = 0; r <= rings; r++) {
+                const phi = (r / rings) * Math.PI;
+                const y = Math.cos(phi) * radius;
+                const ringRadius = Math.sin(phi) * radius;
+
+                const ringPoints = [];
+                for (let s = 0; s < segments; s++) {
+                    const theta = (s / segments) * Math.PI * 2;
+                    const x = Math.cos(theta) * ringRadius;
+                    const z = Math.sin(theta) * ringRadius;
+                    ringPoints.push({ x, y, z });
+                }
+                points.push(ringPoints);
+            }
+
+            // Draw sphere
+            ctx.strokeStyle = '#3498db';
+            ctx.lineWidth = 2;
+            ctx.fillStyle = 'rgba(52, 152, 219, 0.6)';
+
+            for (let r = 0; r < rings; r++) {
+                for (let s = 0; s < segments; s++) {
+                    const p1 = points[r][s];
+                    const p2 = points[r][(s + 1) % segments];
+                    const p3 = points[r + 1][(s + 1) % segments];
+                    const p4 = points[r + 1][s];
+
+                    // Rotate and project points
+                    const rot1 = rotatePoint(p1.x, p1.y, p1.z, currentRotation.x, currentRotation.y, currentRotation.z);
+                    const rot2 = rotatePoint(p2.x, p2.y, p2.z, currentRotation.x, currentRotation.y, currentRotation.z);
+                    const rot3 = rotatePoint(p3.x, p3.y, p3.z, currentRotation.x, currentRotation.y, currentRotation.z);
+                    const rot4 = rotatePoint(p4.x, p4.y, p4.z, currentRotation.x, currentRotation.y, currentRotation.z);
+
+                    const proj1 = projectPoint(rot1.x, rot1.y, rot1.z);
+                    const proj2 = projectPoint(rot2.x, rot2.y, rot2.z);
+                    const proj3 = projectPoint(rot3.x, rot3.y, rot3.z);
+                    const proj4 = projectPoint(rot4.x, rot4.y, rot4.z);
+
+                    // Draw quad
+                    ctx.beginPath();
+                    ctx.moveTo(proj1.x, proj1.y);
+                    ctx.lineTo(proj2.x, proj2.y);
+                    ctx.lineTo(proj3.x, proj3.y);
+                    ctx.lineTo(proj4.x, proj4.y);
+                    ctx.closePath();
+                    ctx.fill();
+                    ctx.stroke();
+                }
+            }
+        }
+
+        function drawTorus3D(ctx, size) {
+            const radius = size / 3;
+            const tubeRadius = size / 6;
+            const segments = 24;
+            const tubeSegments = 12;
+
+            // Draw torus
+            ctx.strokeStyle = '#9b59b6';
+            ctx.lineWidth = 2;
+            ctx.fillStyle = 'rgba(155, 89, 182, 0.6)';
+
+            for (let i = 0; i < segments; i++) {
+                const theta = (i / segments) * Math.PI * 2;
+                const cosTheta = Math.cos(theta);
+                const sinTheta = Math.sin(theta);
+
+                for (let j = 0; j < tubeSegments; j++) {
+                    const phi = (j / tubeSegments) * Math.PI * 2;
+                    const cosPhi = Math.cos(phi);
+                    const sinPhi = Math.sin(phi);
+
+                    // Calculate point
+                    const x = (radius + tubeRadius * cosPhi) * cosTheta;
+                    const y = tubeRadius * sinPhi;
+                    const z = (radius + tubeRadius * cosPhi) * sinTheta;
+
+                    // Rotate and project point
+                    const rotated = rotatePoint(x, y, z, currentRotation.x, currentRotation.y, currentRotation.z);
+                    const projected = projectPoint(rotated.x, rotated.y, rotated.z);
+
+                    // Draw point
+                    ctx.beginPath();
+                    ctx.arc(projected.x, projected.y, 3, 0, Math.PI * 2);
+                    ctx.fill();
+                }
+            }
+        }
+
+        // Image Processing Functions
+        function handleImageUpload(e) {
+            const file = e.target.files[0];
+            if (!file) return;
+
+            const reader = new FileReader();
+            reader.onload = function (event) {
+                const img = new Image();
+                img.onload = function () {
+                    // Scale image to fit canvas
+                    const scale = Math.min(originalCanvas.width / img.width, originalCanvas.height / img.height);
+                    const width = img.width * scale;
+                    const height = img.height * scale;
+                    const x = (originalCanvas.width - width) / 2;
+                    const y = (originalCanvas.height - height) / 2;
+
+                    // Draw original image
+                    originalCtx.clearRect(0, 0, originalCanvas.width, originalCanvas.height);
+                    originalCtx.drawImage(img, x, y, width, height);
+
+                    // Draw processed image
+                    processedCtx.clearRect(0, 0, processedCanvas.width, processedCanvas.height);
+                    processedCtx.drawImage(img, x, y, width, height);
+
+                    originalImage = {
+                        img: img,
+                        x: x,
+                        y: y,
+                        width: width,
+                        height: height
+                    };
+                };
+                img.src = event.target.result;
+            };
+            reader.readAsDataURL(file);
+        }
+
+        function applyGrayscale() {
+            if (!originalImage) return;
+
+            const imageData = processedCtx.getImageData(0, 0, processedCanvas.width, processedCanvas.height);
+            const data = imageData.data;
+
+            for (let i = 0; i < data.length; i += 4) {
+                const r = data[i];
+                const g = data[i + 1];
+                const b = data[i + 2];
+                const gray = 0.299 * r + 0.587 * g + 0.114 * b;
+
+                data[i] = gray;     // Red
+                data[i + 1] = gray; // Green
+                data[i + 2] = gray; // Blue
+            }
+
+            processedCtx.putImageData(imageData, 0, 0);
+        }
+
+        function applyBinary() {
+            if (!originalImage) return;
+
+            const imageData = processedCtx.getImageData(0, 0, processedCanvas.width, processedCanvas.height);
+            const data = imageData.data;
+            const threshold = 128;
+
+            for (let i = 0; i < data.length; i += 4) {
+                const r = data[i];
+                const g = data[i + 1];
+                const b = data[i + 2];
+                const gray = 0.299 * r + 0.587 * g + 0.114 * b;
+                const binary = gray > threshold ? 255 : 0;
+
+                data[i] = binary;     // Red
+                data[i + 1] = binary; // Green
+                data[i + 2] = binary; // Blue
+            }
+
+            processedCtx.putImageData(imageData, 0, 0);
+        }
+
+        function applyInvert() {
+            if (!originalImage) return;
+
+            const imageData = processedCtx.getImageData(0, 0, processedCanvas.width, processedCanvas.height);
+            const data = imageData.data;
+
+            for (let i = 0; i < data.length; i += 4) {
+                data[i] = 255 - data[i];       // Red
+                data[i + 1] = 255 - data[i + 1]; // Green
+                data[i + 2] = 255 - data[i + 2]; // Blue
+            }
+
+            processedCtx.putImageData(imageData, 0, 0);
+        }
+
+        function resetImage() {
+            if (!originalImage) return;
+
+            processedCtx.clearRect(0, 0, processedCanvas.width, processedCanvas.height);
+            processedCtx.drawImage(
+                originalImage.img,
+                originalImage.x,
+                originalImage.y,
+                originalImage.width,
+                originalImage.height
+            );
+        }
+    </script>
+
+    <!-- My JavaScript -->
+    <script src="js/script.js"></script>
+</body>
+
+</html>

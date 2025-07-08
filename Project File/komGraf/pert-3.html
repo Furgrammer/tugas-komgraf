@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Komputer Grafik</title>
+
+    <!-- My Style -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Feather Icons -->
+    <script src="https://unpkg.com/feather-icons"></script>
+</head>
+
+<body>
+
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo"><a href="index.html">Komputer<span>Grafik</span></a></div>
+                <div class="line"></div>
+                <button onclick="toggleSidebar()" class="toggle-button" id="toggle-button"><i
+                        data-feather="chevrons-right"></i></button>
+            </nav>
+        </div>
+    </header>
+
+    <aside class="sidebar" id="sidebar">
+        <ul class="sidebar-menu">
+            <!-- <button onclick=closeSidebar() id="close-btn"><i data-feather="x"></i></button> -->
+            <h3 class="logo"><a href="index.html">DAFTAR ISI</a></h1>
+
+                <li class="sidebar-item">
+                    <a href="pert-1.html">
+                        <i data-feather="book"></i>
+                        <span>Pertemuan 1</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="pert-2.html">
+                        <i data-feather="book"></i>
+                        <span>Pertemuan 2</span>
+                    </a>
+                </li>
+                <li class="sidebar-item active">
+                    <a href="pert-3.html">
+                        <i data-feather="book"></i>
+                        <span>Pertemuan 3</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="pert-4.html">
+                        <i data-feather="book"></i>
+                        <span>Pertemuan 4</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="pert-5.html">
+                        <i data-feather="book"></i>
+                        <span>Pertemuan 5</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="pert-6.html">
+                        <i data-feather="book"></i>
+                        <span>Pertemuan 6</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="pert-7.html">
+                        <i data-feather="book"></i>
+                        <span>Pertemuan 7</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="pert-8.html">
+                        <i data-feather="book"></i>
+                        <span>Pertemuan 8</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="pert-9.html">
+                        <i data-feather="book"></i>
+                        <span>Pertemuan 9</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="pert-10.html">
+                        <i data-feather="book"></i>
+                        <span>Pertemuan 10</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="pert-11.html">
+                        <i data-feather="book"></i>
+                        <span>Pertemuan 11</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="pert-12.html">
+                        <i data-feather="book"></i>
+                        <span>Pertemuan 12</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="pert-13.html">
+                        <i data-feather="book"></i>
+                        <span>Pertemuan 13</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="pert-14.html">
+                        <i data-feather="book"></i>
+                        <span>Pertemuan 14</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="tugas-dashboard.html">
+                        <i data-feather="book-open"></i>
+                        <span>Tugas Dashboard</span>
+                    </a>
+                </li>
+        </ul>
+    </aside>
+
+    <main>
+        <section id="pert-3" class="section">
+            <header>
+                <h1>Pertemuan 3 - Algoritma Garis dan Poligon</h1>
+            </header>
+
+            <div class="card">
+                <h2>Algoritma Pembentukan Garis</h2>
+                <p>Algoritma garis digunakan untuk menghubungkan dua titik dengan garis lurus pada grafik raster.</p>
+
+                <div class="input-group">
+                    <label>Masukkan Koordinat Titik Awal dan Akhir:</label>
+                    <div>
+                        <input type="number" id="x0" value="2" placeholder="x0">
+                        <input type="number" id="y0" value="1" placeholder="y0">
+                        <span>ke</span>
+                        <input type="number" id="x1" value="8" placeholder="x1">
+                        <input type="number" id="y1" value="5" placeholder="y1">
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label>Pilih Algoritma:</label>
+                    <select id="algorithmSelect">
+                        <option value="bruteForce">Brute Force</option>
+                        <option value="dda">Digital Differential Analyzer (DDA)</option>
+                        <option value="bresenham">Bresenham</option>
+                    </select>
+                </div>
+
+                <button class="btn" id="drawBtn">Gambar Garis</button>
+
+                <div class="visualization">
+                    <h3>Visualisasi Garis</h3>
+                    <div class="canvas-container">
+                        <canvas id="lineCanvas" width="400" height="300"></canvas>
+                    </div>
+                </div>
+
+                <div class="explanation" id="algorithmExplanation">
+                    <h3>Penjelasan Algoritma</h3>
+                    <p>Pilih algoritma dan klik "Gambar Garis" untuk melihat penjelasan dan perhitungan.</p>
+                </div>
+
+                <div class="table-container">
+                    <h3>Perhitungan Langkah demi Langkah</h3>
+                    <table id="calculationTable">
+                        <thead>
+                            <tr>
+                                <th>Iterasi</th>
+                                <th>X</th>
+                                <th>Y</th>
+                                <th>Perhitungan</th>
+                                <th>Piksel</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="card polygon-section">
+                <h2>Poligon dan Pengisian Warna</h2>
+                <p>Poligon adalah bentuk tertutup yang terdiri dari beberapa garis lurus. Berikut adalah contoh poligon
+                    dan
+                    teknik pengisian warnanya.</p>
+
+                <div class="polygon-controls">
+                    <button class="btn btn-polygon" id="drawPolygonBtn">Gambar Poligon</button>
+                    <button class="btn btn-polygon" id="boundaryFillBtn">Boundary Fill</button>
+                    <button class="btn btn-polygon" id="scanLineBtn">Scan Line Fill</button>
+                    <button class="btn btn-stop" id="stopBtn" style="display:none;">Stop Pengisian</button>
+                    <button class="btn" id="resetPolygonBtn">Reset</button>
+                </div>
+
+                <div class="canvas-container">
+                    <div class="status-bar" id="statusBar">Status: Proses pengisian sedang berjalan...</div>
+                    <canvas id="polygonCanvas" width="400" height="300"></canvas>
+                </div>
+
+                <div class="explanation">
+                    <h3>Pengendalian Proses</h3>
+                    <p>Klik tombol <strong>Stop Pengisian</strong> untuk menghentikan proses boundary fill yang sedang
+                        berjalan.
+                    </p>
+                    <p>Tombol <strong>Reset</strong> akan menghentikan semua proses dan mengembalikan canvas ke keadaan
+                        awal.</p>
+                </div>
+            </div>
+
+            <footer>
+                <p>Materi Komputer Grafik - Pertemuan 3: Algoritma Garis dan Poligon</p>
+                <p>Universitas Pamulang - Teknik Informatika S1</p>
+            </footer>
+            </div>
+        </section>
+    </main>
+
+
+    <script>
+        feather.replace();
+
+        // Canvas elements
+        const lineCanvas = document.getElementById('lineCanvas');
+        const polygonCanvas = document.getElementById('polygonCanvas');
+        const lineCtx = lineCanvas.getContext('2d');
+        const polygonCtx = polygonCanvas.getContext('2d');
+
+        // UI elements
+        const drawBtn = document.getElementById('drawBtn');
+        const drawPolygonBtn = document.getElementById('drawPolygonBtn');
+        const boundaryFillBtn = document.getElementById('boundaryFillBtn');
+        const scanLineBtn = document.getElementById('scanLineBtn');
+        const stopBtn = document.getElementById('stopBtn');
+        const resetPolygonBtn = document.getElementById('resetPolygonBtn');
+        const algorithmSelect = document.getElementById('algorithmSelect');
+        const explanationDiv = document.getElementById('algorithmExplanation');
+        const tableBody = document.querySelector('#calculationTable tbody');
+        const statusBar = document.getElementById('statusBar');
+
+        // Animation control
+        let fillAnimationId = null;
+        let isFilling = false;
+
+        // Initialize canvas
+        function initCanvas() {
+            // Clear canvas
+            lineCtx.clearRect(0, 0, lineCanvas.width, lineCanvas.height);
+            polygonCtx.clearRect(0, 0, polygonCanvas.width, polygonCanvas.height);
+
+            // Draw grid on line canvas
+            drawGrid(lineCtx, lineCanvas.width, lineCanvas.height);
+
+            // Draw grid on polygon canvas
+            drawGrid(polygonCtx, polygonCanvas.width, polygonCanvas.height);
+
+            // Hide status bar
+            statusBar.style.display = 'none';
+        }
+
+        // Draw grid function
+        function drawGrid(ctx, width, height) {
+            ctx.strokeStyle = '#e5e7eb';
+            ctx.lineWidth = 1;
+
+            // Draw vertical lines
+            for (let x = 0; x <= width; x += 20) {
+                ctx.beginPath();
+                ctx.moveTo(x, 0);
+                ctx.lineTo(x, height);
+                ctx.stroke();
+            }
+
+            // Draw horizontal lines
+            for (let y = 0; y <= height; y += 20) {
+                ctx.beginPath();
+                ctx.moveTo(0, y);
+                ctx.lineTo(width, y);
+                ctx.stroke();
+            }
+
+            // Draw axes
+            ctx.strokeStyle = '#9ca3af';
+            ctx.lineWidth = 2;
+            ctx.beginPath();
+            ctx.moveTo(0, height / 2);
+            ctx.lineTo(width, height / 2);
+            ctx.stroke();
+
+            ctx.beginPath();
+            ctx.moveTo(width / 2, 0);
+            ctx.lineTo(width / 2, height);
+            ctx.stroke();
+        }
+
+        // Draw point function
+        function drawPoint(ctx, x, y, color = '#ef4444', size = 5) {
+            ctx.fillStyle = color;
+            ctx.beginPath();
+            ctx.arc(x, y, size, 0, Math.PI * 2);
+            ctx.fill();
+        }
+
+        // Draw line function
+        function drawLine(ctx, x0, y0, x1, y1, color = '#2563eb') {
+            ctx.strokeStyle = color;
+            ctx.lineWidth = 2;
+            ctx.beginPath();
+            ctx.moveTo(x0, y0);
+            ctx.lineTo(x1, y1);
+            ctx.stroke();
+        }
+
+        // Convert coordinate system (cartesian to canvas)
+        function toCanvasCoords(x, y, canvas) {
+            const centerX = canvas.width / 2;
+            const centerY = canvas.height / 2;
+            return {
+                x: centerX + x * 20,
+                y: centerY - y * 20
+            };
+        }
+
+        // Brute Force Algorithm
+        function bruteForceLine(x0, y0, x1, y1) {
+            const points = [];
+            const calculations = [];
+
+            // Vertical line
+            if (x0 === x1) {
+                const step = y1 > y0 ? 1 : -1;
+                for (let y = y0; step > 0 ? y <= y1 : y >= y1; y += step) {
+                    points.push({ x: x0, y });
+                    calculations.push({
+                        iteration: points.length,
+                        x: x0,
+                        y,
+                        calc: `x = ${x0} (garis vertikal)`,
+                        pixel: `(${x0}, ${y})`
+                    });
+                }
+                return { points, calculations };
+            }
+
+            // Horizontal line
+            if (y0 === y1) {
+                const step = x1 > x0 ? 1 : -1;
+                for (let x = x0; step > 0 ? x <= x1 : x >= x1; x += step) {
+                    points.push({ x, y: y0 });
+                    calculations.push({
+                        iteration: points.length,
+                        x,
+                        y: y0,
+                        calc: `y = ${y0} (garis horizontal)`,
+                        pixel: `(${x}, ${y0})`
+                    });
+                }
+                return { points, calculations };
+            }
+
+            const dx = x1 - x0;
+            const dy = y1 - y0;
+            const m = dy / dx;
+
+            // For steep lines (|m| > 1)
+            if (Math.abs(dy) > Math.abs(dx)) {
+                const n = Math.abs(dy) + 1;
+                const stepY = dy > 0 ? 1 : -1;
+                const stepX = dx / Math.abs(dy);
+
+                let y = y0;
+                for (let i = 0; i < n; i++) {
+                    const x = x0 + stepX * (y - y0);
+                    const roundedX = Math.round(x);
+
+                    points.push({ x: roundedX, y });
+                    calculations.push({
+                        iteration: i + 1,
+                        x: roundedX,
+                        y,
+                        calc: `x = ${x0} + ${stepX.toFixed(2)} * (${y} - ${y0}) = ${x.toFixed(2)} ≈ ${roundedX}`,
+                        pixel: `(${roundedX}, ${y})`
+                    });
+
+                    y += stepY;
+                }
+            }
+            // For shallow lines (|m| <= 1)
+            else {
+                const n = Math.abs(dx) + 1;
+                const stepX = dx > 0 ? 1 : -1;
+
+                let x = x0;
+                for (let i = 0; i < n; i++) {
+                    const y = y0 + m * (x - x0);
+                    const roundedY = Math.round(y);
+
+                    points.push({ x, y: roundedY });
+                    calculations.push({
+                        iteration: i + 1,
+                        x,
+                        y: roundedY,
+                        calc: `y = ${y0} + ${m.toFixed(2)} * (${x} - ${x0}) = ${y.toFixed(2)} ≈ ${roundedY}`,
+                        pixel: `(${x}, ${roundedY})`
+                    });
+
+                    x += stepX;
+                }
+            }
+
+            return { points, calculations };
+        }
+
+        // DDA Algorithm
+        function ddaLine(x0, y0, x1, y1) {
+            const points = [];
+            const calculations = [];
+
+            const dx = x1 - x0;
+            const dy = y1 - y0;
+            const steps = Math.max(Math.abs(dx), Math.abs(dy));
+
+            const xInc = dx / steps;
+            const yInc = dy / steps;
+
+            let x = x0;
+            let y = y0;
+
+            points.push({ x: Math.round(x), y: Math.round(y) });
+            calculations.push({
+                iteration: 1,
+                x: Math.round(x),
+                y: Math.round(y),
+                calc: `Start point: (${x0}, ${y0})`,
+                pixel: `(${Math.round(x)}, ${Math.round(y)})`
+            });
+
+            for (let i = 0; i < steps; i++) {
+                x += xInc;
+                y += yInc;
+
+                const roundedX = Math.round(x);
+                const roundedY = Math.round(y);
+
+                points.push({ x: roundedX, y: roundedY });
+                calculations.push({
+                    iteration: i + 2,
+                    x: roundedX,
+                    y: roundedY,
+                    calc: `x = ${x.toFixed(2)}, y = ${y.toFixed(2)} ≈ (${roundedX}, ${roundedY})`,
+                    pixel: `(${roundedX}, ${roundedY})`
+                });
+            }
+
+            return { points, calculations };
+        }
+
+        // Bresenham Algorithm
+        function bresenhamLine(x0, y0, x1, y1) {
+            const points = [];
+            const calculations = [];
+
+            const dx = Math.abs(x1 - x0);
+            const dy = Math.abs(y1 - y0);
+            const sx = (x0 < x1) ? 1 : -1;
+            const sy = (y0 < y1) ? 1 : -1;
+
+            let err = dx - dy;
+            let x = x0;
+            let y = y0;
+
+            points.push({ x, y });
+            calculations.push({
+                iteration: 1,
+                x,
+                y,
+                calc: `Start point: (${x0}, ${y0})`,
+                pixel: `(${x}, ${y})`
+            });
+
+            let iteration = 2;
+            while (true) {
+                if (x === x1 && y === y1) break;
+
+                const e2 = 2 * err;
+
+                if (e2 > -dy) {
+                    err -= dy;
+                    x += sx;
+                }
+
+                if (e2 < dx) {
+                    err += dx;
+                    y += sy;
+                }
+
+                points.push({ x, y });
+                calculations.push({
+                    iteration,
+                    x,
+                    y,
+                    calc: `Error: ${err}, Decision: ${e2 > -dy ? 'x++' : ''}${e2 < dx ? ' y++' : ''}`,
+                    pixel: `(${x}, ${y})`
+                });
+
+                iteration++;
+            }
+
+            return { points, calculations };
+        }
+
+        // Draw line using selected algorithm
+        function drawLineWithAlgorithm() {
+            // Get input values
+            const x0 = parseInt(document.getElementById('x0').value);
+            const y0 = parseInt(document.getElementById('y0').value);
+            const x1 = parseInt(document.getElementById('x1').value);
+            const y1 = parseInt(document.getElementById('y1').value);
+
+            // Clear previous results
+            tableBody.innerHTML = '';
+            explanationDiv.innerHTML = '<h3>Penjelasan Algoritma</h3>';
+
+            // Get selected algorithm
+            const algorithm = algorithmSelect.value;
+
+            // Calculate points based on algorithm
+            let result;
+            switch (algorithm) {
+                case 'bruteForce':
+                    result = bruteForceLine(x0, y0, x1, y1);
+                    explanationDiv.innerHTML += `
+                        <p><strong>Algoritma Brute Force:</strong></p>
+                        <p>Algoritma ini menggunakan persamaan garis y = mx + c untuk menentukan titik-titik piksel.</p>
+                        <p>Langkah-langkah:</p>
+                        <ol>
+                            <li>Tentukan titik awal (x0, y0) dan titik akhir (x1, y1)</li>
+                            <li>Hitung gradien m = (y1 - y0)/(x1 - x0)</li>
+                            <li>Iterasi dari x0 ke x1 (untuk |m| ≤ 1) atau dari y0 ke y1 (untuk |m| > 1)</li>
+                            <li>Hitung y = y0 + m*(x - x0) (atau x = x0 + (y - y0)/m)</li>
+                            <li>Bulatkan nilai y (atau x) ke bilangan bulat terdekat</li>
+                            <li>Gambar piksel pada posisi (x, y_rounded) atau (x_rounded, y)</li>
+                        </ol>
+                    `;
+                    break;
+                case 'dda':
+                    result = ddaLine(x0, y0, x1, y1);
+                    explanationDiv.innerHTML += `
+                        <p><strong>Algoritma Digital Differential Analyzer (DDA):</strong></p>
+                        <p>Algoritma ini menggunakan pendekatan incremental untuk menghitung titik-titik piksel.</p>
+                        <p>Langkah-langkah:</p>
+                        <ol>
+                            <li>Tentukan titik awal (x0, y0) dan titik akhir (x1, y1)</li>
+                            <li>Hitung dx = x1 - x0, dy = y1 - y0</li>
+                            <li>Tentukan steps = max(|dx|, |dy|)</li>
+                            <li>Hitung x_increment = dx/steps, y_increment = dy/steps</li>
+                            <li>Mulai dari (x0, y0), tambahkan x_increment dan y_increment pada setiap langkah</li>
+                            <li>Bulatkan nilai x dan y ke bilangan bulat terdekat</li>
+                            <li>Gambar piksel pada setiap langkah</li>
+                        </ol>
+                    `;
+                    break;
+                case 'bresenham':
+                    result = bresenhamLine(x0, y0, x1, y1);
+                    explanationDiv.innerHTML += `
+                        <p><strong>Algoritma Bresenham:</strong></p>
+                        <p>Algoritma ini menggunakan pendekatan integer-only dan lebih efisien karena tidak memerlukan operasi floating point.</p>
+                        <p>Langkah-langkah:</p>
+                        <ol>
+                            <li>Tentukan titik awal (x0, y0) dan titik akhir (x1, y1)</li>
+                            <li>Hitung dx = |x1 - x0|, dy = |y1 - y0|</li>
+                            <li>Tentukan arah pada sumbu x (sx) dan sumbu y (sy)</li>
+                            <li>Hitung error = dx - dy</li>
+                            <li>Pada setiap langkah:
+                                <ul>
+                                    <li>Jika error * 2 > -dy, maka error -= dy dan x += sx</li>
+                                    <li>Jika error * 2 < dx, maka error += dx dan y += sy</li>
+                                </ul>
+                            </li>
+                            <li>Gambar piksel pada setiap langkah</li>
+                        </ol>
+                    `;
+                    break;
+            }
+
+            // Draw points on canvas
+            initCanvas();
+            const start = toCanvasCoords(x0, y0, lineCanvas);
+            const end = toCanvasCoords(x1, y1, lineCanvas);
+
+            // Draw the ideal line
+            drawLine(lineCtx, start.x, start.y, end.x, end.y, '#94a3b8');
+
+            // Draw calculated points
+            result.points.forEach(point => {
+                const canvasPoint = toCanvasCoords(point.x, point.y, lineCanvas);
+                drawPoint(lineCtx, canvasPoint.x, canvasPoint.y, '#ef4444');
+            });
+
+            // Draw start and end points
+            drawPoint(lineCtx, start.x, start.y, '#10b981', 7);
+            drawPoint(lineCtx, end.x, end.y, '#10b981', 7);
+
+            // Fill calculation table
+            result.calculations.forEach(row => {
+                const tr = document.createElement('tr');
+                tr.innerHTML = `
+                    <td>${row.iteration}</td>
+                    <td>${row.x}</td>
+                    <td>${row.y}</td>
+                    <td>${row.calc}</td>
+                    <td>${row.pixel}</td>
+                `;
+                tableBody.appendChild(tr);
+            });
+        }
+
+        // Polygon drawing and filling
+        const polygonVertices = [
+            { x: 1, y: 1 },
+            { x: 2, y: 5 },
+            { x: 5, y: 4 },
+            { x: 8, y: 7 },
+            { x: 10, y: 4 },
+            { x: 10, y: 2 }
+        ];
+
+        function drawPolygon() {
+            initCanvas();
+
+            // Draw polygon vertices
+            polygonVertices.forEach((vertex, index) => {
+                const nextVertex = polygonVertices[(index + 1) % polygonVertices.length];
+                const start = toCanvasCoords(vertex.x, vertex.y, polygonCanvas);
+                const end = toCanvasCoords(nextVertex.x, nextVertex.y, polygonCanvas);
+
+                drawLine(polygonCtx, start.x, start.y, end.x, end.y, '#2563eb');
+                drawPoint(polygonCtx, start.x, start.y, '#ef4444', 5);
+            });
+        }
+
+        // Function to stop all filling processes
+        function stopFilling() {
+            if (fillAnimationId) {
+                cancelAnimationFrame(fillAnimationId);
+                fillAnimationId = null;
+            }
+            isFilling = false;
+            stopBtn.style.display = 'none';
+            boundaryFillBtn.disabled = false;
+            scanLineBtn.disabled = false;
+            statusBar.style.display = 'none';
+        }
+
+        // Boundary fill algorithm (4-connected)
+        function boundaryFill() {
+            // Stop any ongoing filling process
+            stopFilling();
+
+            // Show status and buttons
+            statusBar.textContent = "Status: Boundary Fill sedang berjalan...";
+            statusBar.style.display = 'block';
+            stopBtn.style.display = 'inline-block';
+            boundaryFillBtn.disabled = true;
+            scanLineBtn.disabled = true;
+            isFilling = true;
+
+            const startX = 3;
+            const startY = 3;
+            const startPoint = toCanvasCoords(startX, startY, polygonCanvas);
+
+            const fillColor = [255, 0, 0]; // Red
+            const boundaryColor = [52, 152, 219]; // Blue
+
+            const stack = [startPoint];
+            const visited = new Set();
+
+            function processPoint(x, y) {
+                if (!isFilling) return;
+
+                const pixel = polygonCtx.getImageData(x, y, 1, 1).data;
+
+                // Check if pixel is not boundary and not filled
+                if (!(pixel[0] === boundaryColor[0] && pixel[1] === boundaryColor[1] && pixel[2] === boundaryColor[2]) &&
+                    !(pixel[0] === fillColor[0] && pixel[1] === fillColor[1] && pixel[2] === fillColor[2])) {
+
+                    // Fill the pixel
+                    polygonCtx.fillStyle = `rgb(${fillColor.join(',')})`;
+                    polygonCtx.fillRect(x, y, 1, 1);
+
+                    // Add neighbors to stack
+                    const neighbors = [
+                        { x: x + 1, y }, // Right
+                        { x: x - 1, y }, // Left
+                        { x, y: y + 1 }, // Down
+                        { x, y: y - 1 }  // Up
+                    ];
+
+                    neighbors.forEach(neighbor => {
+                        const key = `${neighbor.x},${neighbor.y}`;
+                        if (!visited.has(key) &&
+                            neighbor.x >= 0 && neighbor.x < polygonCanvas.width &&
+                            neighbor.y >= 0 && neighbor.y < polygonCanvas.height) {
+
+                            visited.add(key);
+                            stack.push(neighbor);
+                        }
+                    });
+                }
+            }
+
+            // Animate the filling
+            function animate() {
+                if (stack.length > 0 && isFilling) {
+                    for (let i = 0; i < 100 && stack.length > 0; i++) {
+                        const point = stack.pop();
+                        processPoint(point.x, point.y);
+                    }
+                    fillAnimationId = requestAnimationFrame(animate);
+                } else {
+                    stopFilling();
+                    statusBar.textContent = "Status: Boundary Fill selesai!";
+                    setTimeout(() => {
+                        statusBar.style.display = 'none';
+                    }, 2000);
+                }
+            }
+
+            visited.add(`${startPoint.x},${startPoint.y}`);
+            animate();
+        }
+
+        // Scan line fill algorithm (simplified)
+        function scanLineFill() {
+            // Stop any ongoing filling process
+            stopFilling();
+
+            // Show status
+            statusBar.textContent = "Status: Scan Line Fill selesai!";
+            statusBar.style.display = 'block';
+            setTimeout(() => {
+                statusBar.style.display = 'none';
+            }, 2000);
+
+            // For simplicity, we'll just fill with a color
+            polygonCtx.fillStyle = 'rgba(255, 165, 0, 0.6)';
+            polygonCtx.beginPath();
+
+            // Move to first point
+            const firstPoint = toCanvasCoords(polygonVertices[0].x, polygonVertices[0].y, polygonCanvas);
+            polygonCtx.moveTo(firstPoint.x, firstPoint.y);
+
+            // Draw lines to other points
+            for (let i = 1; i < polygonVertices.length; i++) {
+                const point = toCanvasCoords(polygonVertices[i].x, polygonVertices[i].y, polygonCanvas);
+                polygonCtx.lineTo(point.x, point.y);
+            }
+
+            // Close path and fill
+            polygonCtx.closePath();
+            polygonCtx.fill();
+        }
+
+        // Event listeners
+        drawBtn.addEventListener('click', drawLineWithAlgorithm);
+        drawPolygonBtn.addEventListener('click', drawPolygon);
+        boundaryFillBtn.addEventListener('click', boundaryFill);
+        scanLineBtn.addEventListener('click', scanLineFill);
+        stopBtn.addEventListener('click', stopFilling);
+        resetPolygonBtn.addEventListener('click', () => {
+            stopFilling();
+            initCanvas();
+            drawPolygon();
+        });
+
+        // Initialize on load
+        window.onload = function () {
+            initCanvas();
+            drawPolygon();
+        };
+    </script>
+
+    <!-- My JavaScript -->
+    <script src="js/script.js"></script>
+</body>
+
+</html>
